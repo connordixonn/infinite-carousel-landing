@@ -13,14 +13,13 @@ export const LogoCarousel = () => {
   const [duplicatedLogos, setDuplicatedLogos] = useState<string[]>([]);
 
   useEffect(() => {
-    // Duplicate the logos array three times to ensure smooth infinite scrolling
     setDuplicatedLogos([...logos, ...logos, ...logos]);
   }, []);
 
   return (
-    <div className="py-12 bg-white overflow-hidden">
+    <div className="py-16 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wide mb-8">
+        <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-wide mb-12">
           Trusted by Industry Leaders
         </p>
         <div className="relative">
@@ -30,7 +29,7 @@ export const LogoCarousel = () => {
                 <img
                   src={logo}
                   alt="Client logo"
-                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                 />
               </div>
             ))}
