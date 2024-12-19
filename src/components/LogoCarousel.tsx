@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Separator } from "@/components/ui/separator";
 
 const logos = [
   "/lovable-uploads/c0c3535b-c3e0-437c-8df6-de7b715f2932.png", // Yamaha
@@ -17,7 +18,8 @@ export const LogoCarousel = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gradient-to-b from-[#FDE1D3] to-white overflow-hidden">
+    <div className="py-16 overflow-hidden">
+      <Separator className="mb-16" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-wide mb-12">
           Trusted by Industry Leaders
@@ -36,6 +38,7 @@ export const LogoCarousel = () => {
           </div>
         </div>
       </div>
+      <Separator className="mt-16" />
     </div>
   );
 };
