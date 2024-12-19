@@ -91,7 +91,7 @@ export const LogoCarousel = () => {
                     />
                   </div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-50">
+                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-[999]">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-sm font-medium text-gray-900">
