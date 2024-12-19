@@ -20,14 +20,14 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="py-32 relative overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
-      <div className="absolute inset-y-0 right-0 w-1/2 bg-[#9b87f5]/5 blur-3xl transform rotate-12"></div>
+    <div className="py-32 relative overflow-hidden bg-[#1a1f36] text-white">
+      <div className="absolute inset-y-0 right-0 w-1/2 bg-[#60A5FA]/5 blur-3xl transform rotate-12"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold">
             Transform Your Enterprise Sales
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-300">
             Unlock new levels of growth with our enterprise-focused approach
           </p>
         </div>
@@ -35,16 +35,16 @@ export const Features = () => {
           {features.map((feature) => (
             <div 
               key={feature.title} 
-              className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="relative p-8 bg-[#252b45] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800"
             >
-              <div className="absolute -top-4 -left-4 p-3 bg-[#9b87f5] rounded-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 p-3 bg-[#60A5FA] rounded-xl shadow-lg">
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
               <div className="pt-4">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-300">{feature.description}</p>
               </div>
             </div>
           ))}
