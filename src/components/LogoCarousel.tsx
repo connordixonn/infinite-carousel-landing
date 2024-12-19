@@ -17,7 +17,7 @@ export const LogoCarousel = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+    <div className="py-16 bg-gradient-to-b from-[#FDE1D3] to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-wide mb-12">
           Trusted by Industry Leaders
