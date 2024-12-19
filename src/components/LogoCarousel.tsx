@@ -18,8 +18,8 @@ export const LogoCarousel = () => {
   }, []);
 
   return (
-    <div className="py-16 overflow-hidden">
-      <Separator className="mb-16" />
+    <div className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-gray-50/50 to-white">
+      <Separator className="mb-16 opacity-50" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-semibold text-gray-600 uppercase tracking-wide mb-12">
           Trusted by Industry Leaders
@@ -27,18 +27,18 @@ export const LogoCarousel = () => {
         <div className="relative">
           <div className="flex space-x-16 animate-marquee">
             {duplicatedLogos.map((logo, idx) => (
-              <div key={idx} className="flex-shrink-0">
+              <div key={idx} className="flex-shrink-0 group">
                 <img
                   src={logo}
                   alt="Client logo"
-                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 transform group-hover:scale-110"
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-      <Separator className="mt-16" />
+      <Separator className="mt-16 opacity-50" />
     </div>
   );
 };
