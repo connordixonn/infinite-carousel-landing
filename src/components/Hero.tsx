@@ -30,6 +30,18 @@ export const Hero = () => {
               Schedule Demo
             </Button>
           </div>
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden p-[2px] bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#60A5FA]">
+              <div className="aspect-video w-full rounded-xl overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
