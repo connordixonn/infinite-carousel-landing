@@ -15,7 +15,7 @@ export const Hero = () => {
             </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
               Get more enterprise <br className="hidden sm:block" />
-              <span className="text-[#60A5FA]">enterprise customers</span> without <br className="hidden sm:block" />
+              <span className="bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] text-transparent bg-clip-text">enterprise customers</span> without <br className="hidden sm:block" />
               spending on bad marketing
             </h1>
             <p className="max-w-2xl mx-auto text-xl text-gray-600">
