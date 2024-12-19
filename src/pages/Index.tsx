@@ -5,7 +5,7 @@ import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Hero />
       <LogoCarousel />
       <Features />

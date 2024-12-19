@@ -25,25 +25,24 @@ const caseStudies = [
 
 export const CaseStudies = () => {
   return (
-    <div className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white"></div>
-      <div className="absolute inset-y-0 left-0 w-1/2 bg-blue-50/10 blur-3xl transform -rotate-12"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-16 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+    <div className="py-32 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-[#9b87f5]/5 blur-3xl transform -rotate-12"></div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-16">
           Real Results, Real Growth
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {caseStudies.map((study) => (
             <div
               key={study.title}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+              className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
             >
               <div className="p-8">
                 <div className="flex gap-2 mb-6">
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-[#60A5FA]/10 text-[#60A5FA] rounded-full text-sm font-medium border border-[#60A5FA]/20"
+                      className="px-3 py-1 bg-[#9b87f5]/10 text-[#9b87f5] rounded-full text-sm font-medium"
                     >
                       {tag}
                     </span>
@@ -59,8 +58,8 @@ export const CaseStudies = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {study.stats.map((stat) => (
-                    <div key={stat.label} className="text-center p-4 rounded-lg bg-blue-50/50">
-                      <div className="text-2xl font-bold text-[#60A5FA]">
+                    <div key={stat.label} className="text-center p-4 rounded-lg bg-[#9b87f5]/5">
+                      <div className="text-2xl font-bold text-[#9b87f5]">
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-600">{stat.label}</div>
@@ -72,7 +71,7 @@ export const CaseStudies = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-          <Button className="bg-[#60A5FA] hover:bg-blue-500 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6">
+          <Button className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg">
             Book a Call
           </Button>
           <p className="mt-4 text-sm text-gray-600">
