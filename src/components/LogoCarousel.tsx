@@ -73,13 +73,13 @@ export const LogoCarousel = () => {
   }, []);
 
   return (
-    <div className="py-24 relative overflow-hidden border-y border-gray-100 bg-white/50 backdrop-blur-sm">
+    <div className="py-24 relative overflow-visible border-y border-gray-100 bg-white/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <p className="text-center text-sm font-medium text-gray-600 uppercase tracking-wider mb-12">
           Trusted by Industry Leaders
         </p>
-        <div className="relative">
-          <div className="flex space-x-16 animate-marquee">
+        <div className="relative overflow-visible">
+          <div className="flex space-x-16 animate-marquee overflow-visible">
             {duplicatedLogos.map((logo, idx) => (
               <HoverCard key={idx}>
                 <HoverCardTrigger asChild>
@@ -91,7 +91,7 @@ export const LogoCarousel = () => {
                     />
                   </div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-[999]">
+                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-[999] relative">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-sm font-medium text-gray-900">
