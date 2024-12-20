@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
@@ -38,38 +38,58 @@ export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [autoShowEnabled, setAutoShowEnabled] = useState(true);
+  const [lastInteractionTime, setLastInteractionTime] = useState(0);
 
-  const handlePopupShow = useCallback((index: number) => {
-    setOpenPopover(index);
-    setIsPaused(true);
-  }, []);
-
-  const handlePopupHide = useCallback(() => {
+  // Reset all states
+  const resetStates = () => {
     setOpenPopover(null);
     setIsPaused(false);
-  }, []);
+    setAutoShowEnabled(true);
+  };
+
+  // Handle manual popup show
+  const handlePopupShow = (index: number) => {
+    setLastInteractionTime(Date.now());
+    setOpenPopover(index);
+    setIsPaused(true);
+    setAutoShowEnabled(false);
+  };
+
+  // Handle manual popup hide
+  const handlePopupHide = () => {
+    setOpenPopover(null);
+    setIsPaused(false);
+    // Only re-enable auto-show if enough time has passed
+    if (Date.now() - lastInteractionTime > 1000) {
+      setAutoShowEnabled(true);
+    }
+  };
 
   // Auto-show functionality
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!autoShowEnabled) return;
 
-    const interval = setInterval(() => {
-      const currentPosition = Math.floor(Date.now() / 1000) % (logos.length * 3);
-      if (currentPosition % 3 === 0) {
-        const logoIndex = Math.floor(currentPosition / 3);
-        handlePopupShow(logoIndex);
+    let currentIndex = 0;
+    const showNextPopup = () => {
+      if (!autoShowEnabled) return;
+      
+      handlePopupShow(currentIndex);
+      
+      setTimeout(() => {
+        if (autoShowEnabled) {
+          handlePopupHide();
+          currentIndex = (currentIndex + 3) % logos.length; // Skip 3 logos
+        }
+      }, 3000);
+    };
 
-        setTimeout(() => {
-          if (isAutoPlaying) { // Only hide if still autoplaying
-            handlePopupHide();
-          }
-        }, 3000);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, handlePopupShow, handlePopupHide]);
+    const interval = setInterval(showNextPopup, 4000);
+    
+    return () => {
+      clearInterval(interval);
+    };
+  }, [autoShowEnabled]);
 
   return (
     <div className="py-16 relative">
@@ -80,17 +100,18 @@ export const LogoCarousel = () => {
         <div className="mx-auto overflow-hidden">
           <div 
             style={{
-              animationPlayState: isHovered || isPaused ? 'paused' : 'running',
+              animationPlayState: isPaused ? 'paused' : 'running',
             }}
             className="flex animate-marquee space-x-16"
             onMouseEnter={() => {
               setIsHovered(true);
-              setIsAutoPlaying(false);
+              setAutoShowEnabled(false);
             }}
             onMouseLeave={() => {
               setIsHovered(false);
-              setIsAutoPlaying(true);
-              if (!isPaused) handlePopupHide();
+              handlePopupHide();
+              // Add delay before re-enabling auto-show
+              setTimeout(() => setAutoShowEnabled(true), 1000);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
@@ -101,14 +122,10 @@ export const LogoCarousel = () => {
                 <Popover.Trigger 
                   className="relative z-10 flex items-center outline-none group"
                   onMouseEnter={() => {
-                    if (isHovered) {
-                      handlePopupShow(idx);
-                    }
+                    if (isHovered) handlePopupShow(idx);
                   }}
                   onMouseLeave={() => {
-                    if (isHovered) {
-                      handlePopupHide();
-                    }
+                    if (isHovered) handlePopupHide();
                   }}
                 >
                   <img
@@ -127,12 +144,12 @@ export const LogoCarousel = () => {
                     sideOffset={5}
                     onMouseEnter={() => {
                       setIsPaused(true);
-                      setIsAutoPlaying(false);
+                      setAutoShowEnabled(false);
                     }}
                     onMouseLeave={() => {
                       if (!isHovered) {
                         handlePopupHide();
-                        setIsAutoPlaying(true);
+                        setTimeout(() => setAutoShowEnabled(true), 1000);
                       }
                     }}
                   >
