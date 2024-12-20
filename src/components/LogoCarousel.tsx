@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import {
   HoverCard,
   HoverCardContent,
@@ -42,37 +41,21 @@ const testimonials = [
 ];
 
 export const LogoCarousel = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scrollSpeed = 1.0;
-    const scrollInterval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollLeft += scrollSpeed;
-        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
-          scrollRef.current.scrollLeft = 0;
-        }
-      }
-    }, 20);
-
-    return () => clearInterval(scrollInterval);
-  }, []);
-
   return (
     <div className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="mx-auto overflow-hidden" ref={scrollRef}>
-          <div className="flex space-x-16">
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee space-x-16">
             {logos.concat(logos).map((logo, idx) => (
               <HoverCard key={idx}>
                 <HoverCardTrigger>
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-48 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </HoverCardTrigger>
                 <HoverCardContent 
