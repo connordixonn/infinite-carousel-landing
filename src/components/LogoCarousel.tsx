@@ -38,8 +38,39 @@ export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [autoShowEnabled, setAutoShowEnabled] = useState(true);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  
+  // Track carousel position
+  const [carouselCycle, setCarouselCycle] = useState(0);
+  const POPUP_INTERVAL = 4; // Show every 4th logo
+  const POPUP_DURATION = 5000; // Show for 5 seconds
+
+  const handleImageLoad = (logo: string) => {
+    setLoadedImages(prev => new Set(prev).add(logo));
+  };
+
+  // Auto-show functionality based on carousel position
+  useEffect(() => {
+    if (isHovered) return;
+
+    const carouselDuration = 15000; // Match this with your CSS animation duration
+    const checkPosition = () => {
+      const currentTime = Date.now();
+      const cycleProgress = (currentTime % carouselDuration) / carouselDuration;
+      const currentPosition = Math.floor(cycleProgress * logos.length);
+
+      if (currentPosition % POPUP_INTERVAL === 0 && currentPosition !== 0) {
+        handlePopupShow(currentPosition);
+        
+        setTimeout(() => {
+          handlePopupHide();
+        }, POPUP_DURATION);
+      }
+    };
+
+    const interval = setInterval(checkPosition, 1000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   const handlePopupShow = (index: number) => {
     setOpenPopover(index);
@@ -51,44 +82,17 @@ export const LogoCarousel = () => {
     setIsPaused(false);
   };
 
-  // Auto-show functionality with position tracking
+  // Track carousel cycles
   useEffect(() => {
-    if (!autoShowEnabled) return;
-
     const interval = setInterval(() => {
-      // Update position based on time passed
-      const newPosition = (currentPosition + 1) % logos.length;
-      setCurrentPosition(newPosition);
-
-      // Show popup every 3rd position
-      if (newPosition % 3 === 0) {
-        handlePopupShow(newPosition);
-        
-        // Hide popup after 3 seconds
-        setTimeout(() => {
-          if (autoShowEnabled) {
-            handlePopupHide();
-          }
-        }, 3000);
-      }
-    }, 1000);
+      setCarouselCycle(prev => prev + 1);
+    }, 15000); // Match with your carousel duration
 
     return () => clearInterval(interval);
-  }, [autoShowEnabled, currentPosition]);
-
-  // Reset position when carousel restarts
-  useEffect(() => {
-    const marqueeInterval = setInterval(() => {
-      if (!isPaused) {
-        setCurrentPosition(0);
-      }
-    }, 15000); // Match this with your marquee animation duration
-
-    return () => clearInterval(marqueeInterval);
-  }, [isPaused]);
+  }, []);
 
   return (
-    <div className="py-16 relative">
+    <div className="py-16 relative" role="region" aria-label="Logo Carousel">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
@@ -97,21 +101,18 @@ export const LogoCarousel = () => {
           <div 
             style={{
               animationPlayState: isPaused ? 'paused' : 'running',
+              willChange: 'transform',
             }}
             className="flex animate-marquee space-x-16"
-            onMouseEnter={() => {
-              setIsHovered(true);
-              setAutoShowEnabled(false);
-            }}
+            onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => {
               setIsHovered(false);
               handlePopupHide();
-              setTimeout(() => setAutoShowEnabled(true), 500);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
               <Popover.Root 
-                key={idx}
+                key={`${idx}-${carouselCycle}`}
                 open={openPopover === idx}
               >
                 <Popover.Trigger 
@@ -129,6 +130,7 @@ export const LogoCarousel = () => {
                     className={`h-[80px] w-auto object-contain transition-all duration-300 transform
                               ${openPopover === idx ? 'scale-110 grayscale-0' : 'grayscale hover:grayscale-0 group-hover:scale-110'}`}
                     style={{ maxWidth: 'none' }}
+                    onLoad={() => handleImageLoad(logo)}
                   />
                 </Popover.Trigger>
 
@@ -139,12 +141,10 @@ export const LogoCarousel = () => {
                     sideOffset={5}
                     onMouseEnter={() => {
                       setIsPaused(true);
-                      setAutoShowEnabled(false);
                     }}
                     onMouseLeave={() => {
                       if (!isHovered) {
                         handlePopupHide();
-                        setTimeout(() => setAutoShowEnabled(true), 500);
                       }
                     }}
                   >
