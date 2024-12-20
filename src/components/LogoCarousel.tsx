@@ -39,57 +39,53 @@ export const LogoCarousel = () => {
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [autoShowEnabled, setAutoShowEnabled] = useState(true);
-  const [lastInteractionTime, setLastInteractionTime] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
 
-  // Reset all states
-  const resetStates = () => {
-    setOpenPopover(null);
-    setIsPaused(false);
-    setAutoShowEnabled(true);
-  };
-
-  // Handle manual popup show
   const handlePopupShow = (index: number) => {
-    setLastInteractionTime(Date.now());
     setOpenPopover(index);
     setIsPaused(true);
-    setAutoShowEnabled(false);
   };
 
-  // Handle manual popup hide
   const handlePopupHide = () => {
     setOpenPopover(null);
     setIsPaused(false);
-    // Only re-enable auto-show if enough time has passed
-    if (Date.now() - lastInteractionTime > 1000) {
-      setAutoShowEnabled(true);
-    }
   };
 
-  // Auto-show functionality
+  // Auto-show functionality with position tracking
   useEffect(() => {
     if (!autoShowEnabled) return;
 
-    let currentIndex = 0;
-    const showNextPopup = () => {
-      if (!autoShowEnabled) return;
-      
-      handlePopupShow(currentIndex);
-      
-      setTimeout(() => {
-        if (autoShowEnabled) {
-          handlePopupHide();
-          currentIndex = (currentIndex + 3) % logos.length; // Skip 3 logos
-        }
-      }, 3000);
-    };
+    const interval = setInterval(() => {
+      // Update position based on time passed
+      const newPosition = (currentPosition + 1) % logos.length;
+      setCurrentPosition(newPosition);
 
-    const interval = setInterval(showNextPopup, 4000);
-    
-    return () => {
-      clearInterval(interval);
-    };
-  }, [autoShowEnabled]);
+      // Show popup every 3rd position
+      if (newPosition % 3 === 0) {
+        handlePopupShow(newPosition);
+        
+        // Hide popup after 3 seconds
+        setTimeout(() => {
+          if (autoShowEnabled) {
+            handlePopupHide();
+          }
+        }, 3000);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [autoShowEnabled, currentPosition]);
+
+  // Reset position when carousel restarts
+  useEffect(() => {
+    const marqueeInterval = setInterval(() => {
+      if (!isPaused) {
+        setCurrentPosition(0);
+      }
+    }, 15000); // Match this with your marquee animation duration
+
+    return () => clearInterval(marqueeInterval);
+  }, [isPaused]);
 
   return (
     <div className="py-16 relative">
@@ -110,8 +106,7 @@ export const LogoCarousel = () => {
             onMouseLeave={() => {
               setIsHovered(false);
               handlePopupHide();
-              // Add delay before re-enabling auto-show
-              setTimeout(() => setAutoShowEnabled(true), 1000);
+              setTimeout(() => setAutoShowEnabled(true), 500);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
@@ -149,7 +144,7 @@ export const LogoCarousel = () => {
                     onMouseLeave={() => {
                       if (!isHovered) {
                         handlePopupHide();
-                        setTimeout(() => setAutoShowEnabled(true), 1000);
+                        setTimeout(() => setAutoShowEnabled(true), 500);
                       }
                     }}
                   >
