@@ -42,7 +42,7 @@ export const LogoCarousel = () => {
   const [openPopover, setOpenPopover] = useState<number | null>(null);
 
   return (
-    <div className="py-24 relative">
+    <div className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
@@ -67,35 +67,52 @@ export const LogoCarousel = () => {
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-[80px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     style={{ maxWidth: 'none' }}
                   />
                 </Popover.Trigger>
 
                 <Popover.Portal>
                   <Popover.Content
-                    className="w-[250px] bg-white shadow-lg rounded-xl border-0 
-                             shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
-                             z-[9999] data-[state=open]:animate-bubble-pop"
+                    className="w-[280px] bg-white shadow-md rounded-sm animate-bubble-pop
+                             z-[9999] data-[state=open]:animate-bubble-pop fixed"
                     sideOffset={5}
                     onMouseEnter={() => setOpenPopover(idx)}
                     onMouseLeave={() => setOpenPopover(null)}
                   >
-                    <div className="p-3">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="px-1.5 py-0.5 text-[10px] font-medium bg-green-50 text-green-700 rounded-full">
-                          Call Booked
-                        </span>
-                        <p className="text-[10px] font-medium text-blue-600">
-                          {testimonials[idx % testimonials.length].revenue}
-                        </p>
+                    <div className="border border-gray-200 divide-y divide-gray-100">
+                      <div className="px-3 py-2 bg-gray-50">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">
+                              {testimonials[idx % testimonials.length].company.charAt(0)}
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-gray-700">
+                                {testimonials[idx % testimonials.length].from}
+                              </p>
+                              <p className="text-[10px] text-gray-500">to me</p>
+                            </div>
+                          </div>
+                          <span className="text-[10px] text-gray-500">12:30 PM</span>
+                        </div>
                       </div>
-
-                      <p className="text-xs text-gray-600">
-                        {testimonials[idx % testimonials.length].message}
-                      </p>
+                      
+                      <div className="p-3 bg-white">
+                        <p className="text-xs text-gray-600 mb-3">
+                          {testimonials[idx % testimonials.length].message}
+                        </p>
+                        
+                        <div className="flex items-center justify-between text-[11px]">
+                          <span className="text-green-600 font-medium">
+                            ✓ Call Booked
+                          </span>
+                          <span className="text-blue-600 font-medium">
+                            {testimonials[idx % testimonials.length].revenue}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <Popover.Arrow className="fill-white" />
                   </Popover.Content>
                 </Popover.Portal>
               </Popover.Root>

@@ -49,24 +49,24 @@
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 40s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .animate-marquee-slow {
-  animation: marquee 120s linear infinite;
+  animation: marquee 90s linear infinite;
 }
 
 @keyframes bubble-pop {
   0% {
     opacity: 0;
-    transform: translateY(10px) scale(0.95);
+    transform: translateY(4px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 .animate-bubble-pop {
-  animation: bubble-pop 0.2s ease-out forwards;
+  animation: bubble-pop 0.15s ease-out forwards;
 }
