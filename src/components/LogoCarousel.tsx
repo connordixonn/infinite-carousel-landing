@@ -69,7 +69,7 @@ export const LogoCarousel = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const scrollSpeed = 1;
+    const scrollSpeed = 0.5;
     const scrollInterval = setInterval(() => {
       setScrollPosition((prevPosition) => {
         const newPosition = prevPosition + scrollSpeed;
@@ -91,9 +91,10 @@ export const LogoCarousel = () => {
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-8 w-auto object-contain"
+                    className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     style={{
                       transform: `translateX(-${scrollPosition}%)`,
+                      transition: 'transform 0.05s linear'
                     }}
                   />
                 </HoverCardTrigger>
