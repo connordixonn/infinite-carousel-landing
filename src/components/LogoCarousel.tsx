@@ -45,13 +45,13 @@ export const LogoCarousel = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const scrollSpeed = 2;
+    const scrollSpeed = 0.5;
     const scrollInterval = setInterval(() => {
       setScrollPosition((prevPosition) => {
         const newPosition = prevPosition + scrollSpeed;
-        return newPosition > 100 ? 0 : newPosition;
+        return newPosition >= 100 ? 0 : newPosition;
       });
-    }, 50);
+    }, 20);
 
     return () => clearInterval(scrollInterval);
   }, []);
@@ -62,18 +62,15 @@ export const LogoCarousel = () => {
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="mx-auto">
-          <div className="flex overflow-hidden space-x-16">
+        <div className="mx-auto overflow-hidden">
+          <div className="flex space-x-16" style={{ transform: `translateX(-${scrollPosition}%)` }}>
             {logos.concat(logos).map((logo, idx) => (
               <HoverCard key={idx}>
                 <HoverCardTrigger>
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    style={{
-                      transform: `translateX(-${scrollPosition}%)`,
-                    }}
+                    className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </HoverCardTrigger>
                 <HoverCardContent 
