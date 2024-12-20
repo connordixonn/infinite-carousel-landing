@@ -41,14 +41,20 @@ const testimonials = [
 ];
 
 export const LogoCarousel = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="overflow-hidden">
-          <div className="flex animate-marquee space-x-16 py-24">
+        <div className="mx-auto overflow-hidden">
+          <div 
+            className={`flex animate-marquee space-x-16 ${isHovered ? 'animate-marquee-slow' : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {logos.concat(logos).map((logo, idx) => (
               <div key={idx} className="relative z-10 flex items-center group">
                 <HoverCard>
@@ -61,57 +67,27 @@ export const LogoCarousel = () => {
                     />
                   </HoverCardTrigger>
                   <HoverCardContent 
-                    className="w-[400px] z-[9999] bg-white shadow-lg rounded-lg border-0 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] absolute bottom-full mb-4"
-                    side="bottom"
-                    align="center"
+                    className="w-[250px] z-[9999] bg-white shadow-lg rounded-xl border-0 
+                    shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
+                    absolute top-[-120%] left-1/2 transform -translate-x-1/2"
                     sideOffset={10}
                   >
-                    <div className="p-4">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium">
-                            {testimonials[idx % testimonials.length].company.charAt(0)}
-                          </div>
-                          <div className="ml-2">
-                            <p className="text-sm font-medium text-gray-900">
-                              {testimonials[idx % testimonials.length].from}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              to me
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="px-2 py-1 text-xs font-medium bg-green-50 text-green-700 rounded-full">
-                            Call Booked
-                          </span>
-                          <span className="text-xs text-gray-500">
-                            2:30 PM
-                          </span>
-                        </div>
-                      </div>
-
-                      <h3 className="text-base font-medium text-gray-900 mb-3">
-                        {testimonials[idx % testimonials.length].subject}
-                      </h3>
-
-                      <div className="text-sm text-gray-600">
-                        <p className="leading-relaxed">
-                          {testimonials[idx % testimonials.length].message}
+                    <div className="p-3 relative">
+                      <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 
+                        w-4 h-4 bg-white rotate-45"></div>
+                      
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="px-1.5 py-0.5 text-[10px] font-medium bg-green-50 text-green-700 rounded-full">
+                          Call Booked
+                        </span>
+                        <p className="text-[10px] font-medium text-blue-600">
+                          {testimonials[idx % testimonials.length].revenue}
                         </p>
-                        
-                        <div className="pt-4 border-t mt-4">
-                          <p className="text-sm font-medium text-gray-900">
-                            {testimonials[idx % testimonials.length].company}
-                          </p>
-                          <p className="text-xs text-gray-500">
-                            {testimonials[idx % testimonials.length].title}
-                          </p>
-                          <p className="text-sm font-medium text-blue-600 mt-1">
-                            {testimonials[idx % testimonials.length].revenue}
-                          </p>
-                        </div>
                       </div>
+
+                      <p className="text-xs text-gray-600">
+                        {testimonials[idx % testimonials.length].message}
+                      </p>
                     </div>
                   </HoverCardContent>
                 </HoverCard>

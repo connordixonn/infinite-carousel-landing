@@ -55,3 +55,18 @@
 .animate-marquee-slow {
   animation: marquee 120s linear infinite;
 }
+
+@keyframes bubble-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.animate-bubble-pop {
+  animation: bubble-pop 0.2s ease-out forwards;
+}
