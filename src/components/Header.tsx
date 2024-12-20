@@ -9,11 +9,13 @@ export const Header = () => {
             <img 
               src="https://res.cloudinary.com/dqojf0xy1/image/upload/v1734673877/ab0d48b8-4f7b-4b0b-9763-f8b2528c6efa_cqcauo.png"
               alt="Scale Your Leads Logo"
-              className="h-16 w-auto"
+              className="h-16 w-16 object-contain"
             />
-            <h1 className="text-3xl font-bold text-gray-900 font-cabinet-grotesk tracking-tight">
-              Scale Your Leads
-            </h1>
+            <div className="text-[22px] font-bold tracking-tight">
+              <span className="text-[#1B1F45] font-cabinet-grotesk">SCALE</span><br/>
+              <span className="text-[#1B1F45] font-cabinet-grotesk">YOUR</span><br/>
+              <span className="text-[#1B1F45] font-cabinet-grotesk">LEADS</span>
+            </div>
           </div>
         </div>
       </div>
