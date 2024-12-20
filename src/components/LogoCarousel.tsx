@@ -38,27 +38,38 @@ export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const handlePopupShow = useCallback((index: number) => {
+    setOpenPopover(index);
+    setIsPaused(true);
+  }, []);
+
+  const handlePopupHide = useCallback(() => {
+    setOpenPopover(null);
+    setIsPaused(false);
+  }, []);
 
   // Auto-show functionality
   useEffect(() => {
-    if (isPaused) return;
+    if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
       const currentPosition = Math.floor(Date.now() / 1000) % (logos.length * 3);
       if (currentPosition % 3 === 0) {
         const logoIndex = Math.floor(currentPosition / 3);
-        setOpenPopover(logoIndex);
-        setIsPaused(true);
+        handlePopupShow(logoIndex);
 
         setTimeout(() => {
-          setOpenPopover(null);
-          setIsPaused(false);
+          if (isAutoPlaying) { // Only hide if still autoplaying
+            handlePopupHide();
+          }
         }, 3000);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isAutoPlaying, handlePopupShow, handlePopupHide]);
 
   return (
     <div className="py-16 relative">
@@ -72,10 +83,14 @@ export const LogoCarousel = () => {
               animationPlayState: isHovered || isPaused ? 'paused' : 'running',
             }}
             className="flex animate-marquee space-x-16"
-            onMouseEnter={() => setIsHovered(true)}
+            onMouseEnter={() => {
+              setIsHovered(true);
+              setIsAutoPlaying(false);
+            }}
             onMouseLeave={() => {
               setIsHovered(false);
-              if (!isPaused) setOpenPopover(null);
+              setIsAutoPlaying(true);
+              if (!isPaused) handlePopupHide();
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
@@ -85,24 +100,43 @@ export const LogoCarousel = () => {
               >
                 <Popover.Trigger 
                   className="relative z-10 flex items-center outline-none group"
-                  onMouseEnter={() => isHovered && setOpenPopover(idx)}
-                  onMouseLeave={() => isHovered && setOpenPopover(null)}
+                  onMouseEnter={() => {
+                    if (isHovered) {
+                      handlePopupShow(idx);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (isHovered) {
+                      handlePopupHide();
+                    }
+                  }}
                 >
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-[80px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300
-                             group-hover:scale-110 transform"
+                    className={`h-[80px] w-auto object-contain transition-all duration-300 transform
+                              ${openPopover === idx ? 'scale-110 grayscale-0' : 'grayscale hover:grayscale-0 group-hover:scale-110'}`}
                     style={{ maxWidth: 'none' }}
                   />
                 </Popover.Trigger>
 
                 <Popover.Portal>
                   <Popover.Content
-                    className="w-[320px] bg-white shadow-md rounded-sm animate-bubble-pop z-[9999] fixed"
+                    className="w-[320px] bg-white shadow-lg rounded-lg animate-email-pop z-[9999] fixed
+                             origin-[center_bottom]"
                     sideOffset={5}
+                    onMouseEnter={() => {
+                      setIsPaused(true);
+                      setIsAutoPlaying(false);
+                    }}
+                    onMouseLeave={() => {
+                      if (!isHovered) {
+                        handlePopupHide();
+                        setIsAutoPlaying(true);
+                      }
+                    }}
                   >
-                    <div className="bg-white shadow-sm">
+                    <div className="overflow-hidden rounded-lg">
                       <div className="px-3 py-2 bg-gray-50">
                         <h3 className="text-sm font-medium text-gray-900 mb-2">
                           {testimonials[idx % testimonials.length].subject}
@@ -135,8 +169,12 @@ export const LogoCarousel = () => {
                         <div className="flex items-center justify-between text-[11px] pt-2">
                           <span className="text-green-600 font-medium">✓ Call Booked</span>
                           <div className="text-right">
-                            <p className="text-[10px] text-gray-600 mb-0.5">{testimonials[idx % testimonials.length].company}</p>
-                            <p className="text-blue-600 font-medium">{testimonials[idx % testimonials.length].revenue}</p>
+                            <p className="text-[10px] text-gray-600 mb-0.5">
+                              {testimonials[idx % testimonials.length].company}
+                            </p>
+                            <p className="text-blue-600 font-medium">
+                              {testimonials[idx % testimonials.length].revenue}
+                            </p>
                           </div>
                         </div>
                       </div>
