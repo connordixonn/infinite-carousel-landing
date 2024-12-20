@@ -50,41 +50,67 @@ export const LogoCarousel = () => {
         <div className="overflow-hidden">
           <div className="flex animate-marquee space-x-16">
             {logos.concat(logos).map((logo, idx) => (
-              <div key={idx} className="relative">
+              <div key={idx} className="relative z-10">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <img
                       src={logo}
                       alt={`Client logo ${idx + 1}`}
-                      className="h-48 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-96 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100"
                     />
                   </HoverCardTrigger>
                   <HoverCardContent 
-                    className="w-80 z-[999] bg-white shadow-lg"
+                    className="w-[400px] z-[9999] bg-white shadow-lg rounded-lg border-0 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)]"
                     side="top"
                     align="center"
-                    sideOffset={5}
+                    sideOffset={20}
+                    forceMount
                   >
-                    <div className="space-y-4">
-                      <div className="border-b pb-2">
-                        <p className="text-sm text-gray-500">{testimonials[idx % testimonials.length].from}</p>
-                        <p className="font-medium">{testimonials[idx % testimonials.length].subject}</p>
+                    <div className="p-4">
+                      <div className="flex justify-between items-start mb-4">
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-medium">
+                            {testimonials[idx % testimonials.length].company.charAt(0)}
+                          </div>
+                          <div className="ml-2">
+                            <p className="text-sm font-medium text-gray-900">
+                              {testimonials[idx % testimonials.length].from}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              to me
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="px-2 py-1 text-xs font-medium bg-green-50 text-green-700 rounded-full">
+                            Call Booked
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            2:30 PM
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-sm text-gray-600">
-                        {testimonials[idx % testimonials.length].message}
-                      </p>
-                      <div className="flex justify-between items-end">
-                        <div>
+
+                      <h3 className="text-base font-medium text-gray-900 mb-3">
+                        {testimonials[idx % testimonials.length].subject}
+                      </h3>
+
+                      <div className="text-sm text-gray-600 space-y-4">
+                        <p className="leading-relaxed">
+                          {testimonials[idx % testimonials.length].message}
+                        </p>
+                        
+                        <div className="pt-4 border-t mt-4">
                           <p className="text-sm font-medium text-gray-900">
                             {testimonials[idx % testimonials.length].company}
                           </p>
                           <p className="text-xs text-gray-500">
                             {testimonials[idx % testimonials.length].title}
                           </p>
+                          <p className="text-sm font-medium text-blue-600 mt-1">
+                            {testimonials[idx % testimonials.length].revenue}
+                          </p>
                         </div>
-                        <p className="text-sm font-medium text-blue-500">
-                          {testimonials[idx % testimonials.length].revenue}
-                        </p>
                       </div>
                     </div>
                   </HoverCardContent>
