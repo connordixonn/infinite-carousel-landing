@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm h-16">
+    <header className="sticky top-0 left-0 right-0 bg-white z-50 shadow-sm h-16">
       <div className="w-full pl-2.5">
         <div className="flex items-center h-16">
           <img 
