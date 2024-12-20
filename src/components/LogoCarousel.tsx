@@ -48,15 +48,16 @@ export const LogoCarousel = () => {
           TRUSTED BY INDUSTRY LEADERS
         </h2>
         <div className="overflow-hidden">
-          <div className="flex animate-marquee space-x-16">
+          <div className="flex animate-marquee space-x-16 py-12">
             {logos.concat(logos).map((logo, idx) => (
-              <div key={idx} className="relative z-10">
+              <div key={idx} className="relative z-10 flex items-center">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <img
                       src={logo}
                       alt={`Client logo ${idx + 1}`}
-                      className="h-96 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100"
+                      className="h-[200px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      style={{ maxWidth: 'none' }}
                     />
                   </HoverCardTrigger>
                   <HoverCardContent 
@@ -64,7 +65,6 @@ export const LogoCarousel = () => {
                     side="top"
                     align="center"
                     sideOffset={20}
-                    forceMount
                   >
                     <div className="p-4">
                       <div className="flex justify-between items-start mb-4">
@@ -95,7 +95,7 @@ export const LogoCarousel = () => {
                         {testimonials[idx % testimonials.length].subject}
                       </h3>
 
-                      <div className="text-sm text-gray-600 space-y-4">
+                      <div className="text-sm text-gray-600">
                         <p className="leading-relaxed">
                           {testimonials[idx % testimonials.length].message}
                         </p>
