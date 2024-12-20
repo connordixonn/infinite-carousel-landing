@@ -69,13 +69,14 @@ export const LogoCarousel = () => {
                   </HoverCardTrigger>
                   <HoverCardContent 
                     className="w-[250px] z-[9999] bg-white shadow-lg rounded-xl border-0 
-                    shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
-                    absolute top-[-120%] left-1/2 transform -translate-x-1/2"
-                    sideOffset={10}
+                             shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
+                             data-[state=open]:animate-bubble-pop"
+                    side="top"
+                    align="center"
                   >
                     <div className="p-3 relative">
                       <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 
-                        w-4 h-4 bg-white rotate-45"></div>
+                                    w-4 h-4 bg-white rotate-45"></div>
                       
                       <div className="flex items-center justify-between mb-2">
                         <span className="px-1.5 py-0.5 text-[10px] font-medium bg-green-50 text-green-700 rounded-full">
