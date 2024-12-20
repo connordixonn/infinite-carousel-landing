@@ -66,64 +66,61 @@ const testimonials = [
 ];
 
 export const LogoCarousel = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [duplicatedLogos, setDuplicatedLogos] = useState<string[]>([]);
 
   useEffect(() => {
-    const scrollSpeed = 0.5;
-    const scrollInterval = setInterval(() => {
-      setScrollPosition((prevPosition) => {
-        const newPosition = prevPosition + scrollSpeed;
-        return newPosition > 100 ? 0 : newPosition;
-      });
-    }, 50);
-
-    return () => clearInterval(scrollInterval);
+    setDuplicatedLogos([...logos, ...logos, ...logos]);
   }, []);
 
   return (
-    <div className="py-24 relative">
+    <div className="py-24 relative overflow-visible border-y border-gray-100 bg-white/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mx-auto">
-          <div className="flex overflow-hidden space-x-16">
-            {logos.concat(logos).map((logo, idx) => (
+        <p className="text-center text-sm font-medium text-gray-600 uppercase tracking-wider mb-12">
+          Trusted by Industry Leaders
+        </p>
+        <div className="relative overflow-visible">
+          <div className="flex space-x-16 animate-marquee overflow-visible">
+            {duplicatedLogos.map((logo, idx) => (
               <HoverCard key={idx}>
-                <HoverCardTrigger className="relative z-20">
-                  <img
-                    src={logo}
-                    alt={`Client logo ${idx + 1}`}
-                    className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    style={{
-                      transform: `translateX(-${scrollPosition}%)`,
-                      transition: 'transform 0.05s linear'
-                    }}
-                  />
+                <HoverCardTrigger asChild>
+                  <div className="flex-shrink-0 group cursor-pointer">
+                    <img
+                      src={logo}
+                      alt="Client logo"
+                      className="h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
+                    />
+                  </div>
                 </HoverCardTrigger>
-                <HoverCardContent 
-                  className="w-80 z-50"
-                  side="top"
-                  align="center"
-                >
-                  <div className="space-y-4">
-                    <div className="border-b pb-2">
-                      <p className="text-sm text-gray-500">{testimonials[idx % testimonials.length].from}</p>
-                      <p className="font-medium">{testimonials[idx % testimonials.length].subject}</p>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      {testimonials[idx % testimonials.length].message}
-                    </p>
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <p className="text-sm font-medium text-gray-900">
-                          {testimonials[idx % testimonials.length].company}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {testimonials[idx % testimonials.length].title}
-                        </p>
-                      </div>
-                      <p className="text-sm font-medium text-blue-500">
-                        {testimonials[idx % testimonials.length].revenue}
+                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-[999] relative">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-900">
+                        {testimonials[idx % testimonials.length].subject}
+                      </h4>
+                      <p className="text-xs text-gray-500">
+                        {testimonials[idx % testimonials.length].from}
                       </p>
                     </div>
+                    <span className="px-2 py-1 text-xs font-medium bg-[#F2FCE2] text-green-700 rounded">
+                      Call Booked
+                    </span>
+                  </div>
+                  <div className="h-px bg-gray-100 my-2" />
+                  <p className="text-sm text-gray-600 mb-4">
+                    {testimonials[idx % testimonials.length].message}
+                  </p>
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">
+                        {testimonials[idx % testimonials.length].company}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {testimonials[idx % testimonials.length].title}
+                      </p>
+                    </div>
+                    <p className="text-sm font-medium text-blue-500">
+                      {testimonials[idx % testimonials.length].revenue}
+                    </p>
                   </div>
                 </HoverCardContent>
               </HoverCard>
