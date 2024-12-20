@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
