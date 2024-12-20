@@ -21,106 +21,87 @@ const testimonials = [
     message: "Your platform has completely transformed how we handle our marketing operations. The ROI has been incredible.",
     company: "Acme Corp",
     title: "Head of Growth",
-    revenue: "$203k ARR"
+    revenue: "+127% Revenue",
   },
   {
-    from: "s•••••@tesla.com",
-    subject: "Great Results!",
-    message: "We've seen a 3x improvement in our conversion rates since implementing your solution.",
-    company: "Tesla",
-    title: "Marketing Director",
-    revenue: "$450k ARR"
+    from: "m•••••@tech.com",
+    subject: "Platform Success",
+    message: "We've seen a 3x increase in qualified enterprise leads since implementing your solution.",
+    company: "Tech Giants Inc",
+    title: "VP of Sales",
+    revenue: "+312% Pipeline",
   },
   {
-    from: "m•••••@meta.com",
-    subject: "Partnership Discussion",
-    message: "The team has been incredibly impressed with the results. Looking forward to expanding our usage.",
-    company: "Meta",
-    title: "VP Marketing",
-    revenue: "$780k ARR"
+    from: "s•••••@startup.io",
+    subject: "Amazing Results",
+    message: "The enterprise-focused features have helped us land several Fortune 500 clients in record time.",
+    company: "Startup Success",
+    title: "CEO",
+    revenue: "+89% Win Rate",
   },
-  {
-    from: "r•••••@apple.com",
-    subject: "Success Story",
-    message: "Your solution has helped us scale our enterprise marketing efforts significantly.",
-    company: "Apple",
-    title: "CMO",
-    revenue: "$1.2M ARR"
-  },
-  {
-    from: "d•••••@microsoft.com",
-    subject: "Excellent Results",
-    message: "The impact on our marketing efficiency has been remarkable. Great work!",
-    company: "Microsoft",
-    title: "Marketing Lead",
-    revenue: "$890k ARR"
-  },
-  {
-    from: "p•••••@google.com",
-    subject: "Fantastic ROI",
-    message: "We've achieved amazing results with your platform. The team is very impressed.",
-    company: "Google",
-    title: "Growth Manager",
-    revenue: "$670k ARR"
-  }
 ];
 
 export const LogoCarousel = () => {
-  const [duplicatedLogos, setDuplicatedLogos] = useState<string[]>([]);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    setDuplicatedLogos([...logos, ...logos, ...logos]);
+    const scrollSpeed = 2;
+    const scrollInterval = setInterval(() => {
+      setScrollPosition((prevPosition) => {
+        const newPosition = prevPosition + scrollSpeed;
+        return newPosition > 100 ? 0 : newPosition;
+      });
+    }, 50);
+
+    return () => clearInterval(scrollInterval);
   }, []);
 
   return (
-    <div className="py-24 relative overflow-visible border-y border-gray-100 bg-white/50 backdrop-blur-sm">
+    <div className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-sm font-medium text-gray-600 uppercase tracking-wider mb-12">
-          Trusted by Industry Leaders
-        </p>
-        <div className="relative overflow-visible">
-          <div className="flex space-x-16 animate-marquee overflow-visible">
-            {duplicatedLogos.map((logo, idx) => (
+        <h2 className="text-3xl font-bold text-center mb-12">
+          TRUSTED BY INDUSTRY LEADERS
+        </h2>
+        <div className="mx-auto">
+          <div className="flex overflow-hidden space-x-16">
+            {logos.concat(logos).map((logo, idx) => (
               <HoverCard key={idx}>
-                <HoverCardTrigger className="relative z-30 block">
-                  <div className="flex-shrink-0 group cursor-pointer">
-                    <img
-                      src={logo}
-                      alt="Client logo"
-                      className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
+                <HoverCardTrigger>
+                  <img
+                    src={logo}
+                    alt={`Client logo ${idx + 1}`}
+                    className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    style={{
+                      transform: `translateX(-${scrollPosition}%)`,
+                    }}
+                  />
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 z-[100]" side="top" sideOffset={5} align="center">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-900">
-                        {testimonials[idx % testimonials.length].subject}
-                      </h4>
-                      <p className="text-xs text-gray-500">
-                        {testimonials[idx % testimonials.length].from}
-                      </p>
+                <HoverCardContent 
+                  className="w-80 z-[999]"
+                  side="top"
+                  align="center"
+                >
+                  <div className="space-y-4">
+                    <div className="border-b pb-2">
+                      <p className="text-sm text-gray-500">{testimonials[idx % testimonials.length].from}</p>
+                      <p className="font-medium">{testimonials[idx % testimonials.length].subject}</p>
                     </div>
-                    <span className="px-2 py-1 text-xs font-medium bg-[#F2FCE2] text-green-700 rounded">
-                      Call Booked
-                    </span>
-                  </div>
-                  <div className="h-px bg-gray-100 my-2" />
-                  <p className="text-sm text-gray-600 mb-4">
-                    {testimonials[idx % testimonials.length].message}
-                  </p>
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-sm font-medium text-gray-900">
-                        {testimonials[idx % testimonials.length].company}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {testimonials[idx % testimonials.length].title}
-                      </p>
-                    </div>
-                    <p className="text-sm font-medium text-blue-500">
-                      {testimonials[idx % testimonials.length].revenue}
+                    <p className="text-sm text-gray-600">
+                      {testimonials[idx % testimonials.length].message}
                     </p>
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">
+                          {testimonials[idx % testimonials.length].company}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {testimonials[idx % testimonials.length].title}
+                        </p>
+                      </div>
+                      <p className="text-sm font-medium text-blue-500">
+                        {testimonials[idx % testimonials.length].revenue}
+                      </p>
+                    </div>
                   </div>
                 </HoverCardContent>
               </HoverCard>
