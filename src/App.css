@@ -49,11 +49,15 @@
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 30s linear infinite;
+  animation: marquee 24s linear infinite;
 }
 
 .animate-marquee-slow {
-  animation: marquee 90s linear infinite;
+  animation: marquee 72s linear infinite;
+}
+
+.animate-pause {
+  animation-play-state: paused;
 }
 
 @keyframes bubble-pop {

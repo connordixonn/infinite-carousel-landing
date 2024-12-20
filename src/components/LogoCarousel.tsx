@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
@@ -12,21 +12,21 @@ const logos = [
 
 const testimonials = [
   {
-    from: "john.smith@acme.com",
+    from: { name: "john.smith", domain: "acme.com" },
     subject: "Re: Demo Follow-up",
     message: "Your platform has completely transformed how we handle our marketing operations. The ROI has been incredible.",
     company: "Acme Corp",
     revenue: "+127% Revenue",
   },
   {
-    from: "mary.johnson@tech.com",
+    from: { name: "mary.johnson", domain: "tech.com" },
     subject: "Platform Success",
     message: "We've seen a 3x increase in qualified enterprise leads since implementing your solution.",
     company: "Tech Giants Inc",
     revenue: "+312% Pipeline",
   },
   {
-    from: "steve.williams@startup.io",
+    from: { name: "steve.williams", domain: "startup.io" },
     subject: "Amazing Results",
     message: "The enterprise-focused features have helped us land several Fortune 500 clients in record time.",
     company: "Startup Success",
@@ -34,9 +34,29 @@ const testimonials = [
   },
 ];
 
+const AUTO_SHOW_LOGOS = ["Hayward", "Samsung"]; // Add the logo names you want to auto-show
+
 export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
+  const [autoShowIndex, setAutoShowIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (autoShowIndex !== null) {
+      const timer = setTimeout(() => {
+        setAutoShowIndex(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [autoShowIndex]);
+
+  // Check if logo is in view and should auto-show
+  const checkAutoShow = (logo: string, idx: number) => {
+    const logoName = logo.split('/').pop()?.split('.')[0] || '';
+    if (AUTO_SHOW_LOGOS.some(name => logoName.includes(name))) {
+      setAutoShowIndex(idx);
+    }
+  };
 
   return (
     <div className="py-16 relative">
@@ -46,20 +66,30 @@ export const LogoCarousel = () => {
         </h2>
         <div className="mx-auto overflow-hidden">
           <div 
-            className={`flex animate-marquee space-x-16 ${isHovered ? 'animate-marquee-slow' : ''}`}
+            className={`flex animate-marquee space-x-16 ${isHovered || autoShowIndex !== null ? 'animate-pause' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseLeave={() => {
+              setIsHovered(false);
+              if (!autoShowIndex) setOpenPopover(null);
+            }}
           >
             {logos.concat(logos).map((logo, idx) => (
               <Popover.Root 
                 key={idx}
-                open={openPopover === idx}
+                open={openPopover === idx || autoShowIndex === idx}
                 onOpenChange={(open) => setOpenPopover(open ? idx : null)}
               >
                 <Popover.Trigger 
                   className="relative z-10 flex items-center outline-none group"
-                  onMouseEnter={() => setOpenPopover(idx)}
-                  onMouseLeave={() => setOpenPopover(null)}
+                  onMouseEnter={() => {
+                    setOpenPopover(idx);
+                    checkAutoShow(logo, idx);
+                  }}
+                  onMouseLeave={() => {
+                    if (autoShowIndex !== idx) {
+                      setOpenPopover(null);
+                    }
+                  }}
                 >
                   <img
                     src={logo}
@@ -75,10 +105,17 @@ export const LogoCarousel = () => {
                     className="w-[320px] bg-white shadow-md rounded-sm animate-bubble-pop z-[9999] fixed"
                     sideOffset={5}
                     onMouseEnter={() => setOpenPopover(idx)}
-                    onMouseLeave={() => setOpenPopover(null)}
+                    onMouseLeave={() => {
+                      if (autoShowIndex !== idx) {
+                        setOpenPopover(null);
+                      }
+                    }}
                   >
                     <div className="bg-white shadow-sm">
                       <div className="px-3 py-2 bg-gray-50">
+                        <h3 className="text-sm font-medium text-gray-900 mb-2">
+                          {testimonials[idx % testimonials.length].subject}
+                        </h3>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">
@@ -86,10 +123,12 @@ export const LogoCarousel = () => {
                             </div>
                             <div>
                               <div className="relative">
-                                <p className="text-xs font-medium text-gray-700 blur-[2px] select-none">
-                                  {testimonials[idx % testimonials.length].from}
-                                </p>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-white" />
+                                <span className="text-xs font-medium text-gray-700 blur-[2px] select-none">
+                                  {testimonials[idx % testimonials.length].from.name}
+                                </span>
+                                <span className="text-xs font-medium text-gray-700">
+                                  @{testimonials[idx % testimonials.length].from.domain}
+                                </span>
                               </div>
                               <p className="text-[10px] text-gray-500">to me</p>
                             </div>
@@ -99,9 +138,6 @@ export const LogoCarousel = () => {
                       </div>
 
                       <div className="px-3 py-2">
-                        <h3 className="text-sm font-medium text-gray-900 mb-2">
-                          {testimonials[idx % testimonials.length].subject}
-                        </h3>
                         <p className="text-xs text-gray-600 mb-4">
                           {testimonials[idx % testimonials.length].message}
                         </p>
