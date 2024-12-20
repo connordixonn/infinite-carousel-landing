@@ -34,29 +34,33 @@ const testimonials = [
   },
 ];
 
-const AUTO_SHOW_LOGOS = ["Hayward", "Samsung"]; // Add the logo names you want to auto-show
-
 export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
-  const [autoShowIndex, setAutoShowIndex] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
+  // Auto-show functionality
   useEffect(() => {
-    if (autoShowIndex !== null) {
-      const timer = setTimeout(() => {
-        setAutoShowIndex(null);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [autoShowIndex]);
+    if (isPaused) return; // Don't start new auto-show if paused
 
-  // Check if logo is in view and should auto-show
-  const checkAutoShow = (logo: string, idx: number) => {
-    const logoName = logo.split('/').pop()?.split('.')[0] || '';
-    if (AUTO_SHOW_LOGOS.some(name => logoName.includes(name))) {
-      setAutoShowIndex(idx);
-    }
-  };
+    const interval = setInterval(() => {
+      // Show popup every 3rd logo
+      const currentPosition = Math.floor(Date.now() / 1000) % (logos.length * 3);
+      if (currentPosition % 3 === 0) {
+        const logoIndex = Math.floor(currentPosition / 3);
+        setOpenPopover(logoIndex);
+        setIsPaused(true);
+
+        // Hide popup and resume after 3 seconds
+        setTimeout(() => {
+          setOpenPopover(null);
+          setIsPaused(false);
+        }, 3000);
+      }
+    }, 1000); // Check every second
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
     <div className="py-16 relative">
@@ -66,30 +70,27 @@ export const LogoCarousel = () => {
         </h2>
         <div className="mx-auto overflow-hidden">
           <div 
-            className={`flex animate-marquee space-x-16 ${isHovered || autoShowIndex !== null ? 'animate-pause' : ''}`}
-            onMouseEnter={() => setIsHovered(true)}
+            className={`flex animate-marquee space-x-16 ${(isHovered || isPaused) ? '!animation-play-state-paused' : ''}`}
+            onMouseEnter={() => {
+              setIsHovered(true);
+              setIsPaused(true);
+            }}
             onMouseLeave={() => {
               setIsHovered(false);
-              if (!autoShowIndex) setOpenPopover(null);
+              setIsPaused(false);
+              setOpenPopover(null);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
               <Popover.Root 
                 key={idx}
-                open={openPopover === idx || autoShowIndex === idx}
-                onOpenChange={(open) => setOpenPopover(open ? idx : null)}
+                open={openPopover === idx}
+                onOpenChange={(open) => open && setOpenPopover(idx)}
               >
                 <Popover.Trigger 
                   className="relative z-10 flex items-center outline-none group"
-                  onMouseEnter={() => {
-                    setOpenPopover(idx);
-                    checkAutoShow(logo, idx);
-                  }}
-                  onMouseLeave={() => {
-                    if (autoShowIndex !== idx) {
-                      setOpenPopover(null);
-                    }
-                  }}
+                  onMouseEnter={() => isHovered && setOpenPopover(idx)}
+                  onMouseLeave={() => isHovered && setOpenPopover(null)}
                 >
                   <img
                     src={logo}
@@ -104,12 +105,6 @@ export const LogoCarousel = () => {
                   <Popover.Content
                     className="w-[320px] bg-white shadow-md rounded-sm animate-bubble-pop z-[9999] fixed"
                     sideOffset={5}
-                    onMouseEnter={() => setOpenPopover(idx)}
-                    onMouseLeave={() => {
-                      if (autoShowIndex !== idx) {
-                        setOpenPopover(null);
-                      }
-                    }}
                   >
                     <div className="bg-white shadow-sm">
                       <div className="px-3 py-2 bg-gray-50">
