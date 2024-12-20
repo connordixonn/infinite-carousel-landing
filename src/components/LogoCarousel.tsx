@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
-const logos = [
-  "/lovable-uploads/c0c3535b-c3e0-437c-8df6-de7b715f2932.png",
-  "/lovable-uploads/c83ab66c-2a90-41d0-adcb-38f3f04e21cb.png",
-  "/lovable-uploads/2582f734-90de-48b8-9271-d18a644a41b9.png",
-  "/lovable-uploads/bc78a095-24ef-4b81-9272-87017b804733.png",
-  "/lovable-uploads/e5f7c14a-e8d1-452c-93e3-810784cfc985.png",
-  "/lovable-uploads/5157c2a9-7475-47e1-9313-d8ccab95146e.png",
-];
+interface Testimonial {
+  from: {
+    name: string;
+    domain: string;
+  };
+  subject: string;
+  message: string;
+  company: string;
+  revenue: string;
+}
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     from: { name: "john.smith", domain: "acme.com" },
     subject: "Re: Demo Follow-up",
@@ -18,81 +20,79 @@ const testimonials = [
     company: "Acme Corp",
     revenue: "+127% Revenue",
   },
-  {
-    from: { name: "mary.johnson", domain: "tech.com" },
-    subject: "Platform Success",
-    message: "We've seen a 3x increase in qualified enterprise leads since implementing your solution.",
-    company: "Tech Giants Inc",
-    revenue: "+312% Pipeline",
-  },
-  {
-    from: { name: "steve.williams", domain: "startup.io" },
-    subject: "Amazing Results",
-    message: "The enterprise-focused features have helped us land several Fortune 500 clients in record time.",
-    company: "Startup Success",
-    revenue: "+89% Win Rate",
-  },
+  // ... other testimonials
 ];
+
+const logos = [
+  "/lovable-uploads/c0c3535b-c3e0-437c-8df6-de7b715f2932.png",
+  "/lovable-uploads/c83ab66c-2a90-41d0-adcb-38f3f04e21cb.png",
+  "/lovable-uploads/2582f734-90de-48b8-9271-d18a644a41b9.png",
+  "/lovable-uploads/bc78a095-24ef-4b81-9272-87017b804733.png",
+  "/lovable-uploads/e5f7c14a-e8d1-452c-93e3-810784cfc985.png",
+  "/lovable-uploads/5157c2a9-7475-47e1-9313-d8ccab95146e.png",
+] as const;
 
 export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [autoShowEnabled, setAutoShowEnabled] = useState(true);
-  const [lastInteractionTime, setLastInteractionTime] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
 
-  // Reset all states
-  const resetStates = () => {
-    setOpenPopover(null);
-    setIsPaused(false);
-    setAutoShowEnabled(true);
+  const handleImageLoad = () => {
+    setImagesLoaded(prev => prev + 1);
   };
 
-  // Handle manual popup show
   const handlePopupShow = (index: number) => {
-    setLastInteractionTime(Date.now());
     setOpenPopover(index);
     setIsPaused(true);
-    setAutoShowEnabled(false);
   };
 
-  // Handle manual popup hide
   const handlePopupHide = () => {
     setOpenPopover(null);
     setIsPaused(false);
-    // Only re-enable auto-show if enough time has passed
-    if (Date.now() - lastInteractionTime > 1000) {
-      setAutoShowEnabled(true);
-    }
   };
 
-  // Auto-show functionality
+  // Auto-show functionality with position tracking
   useEffect(() => {
-    if (!autoShowEnabled) return;
+    if (!autoShowEnabled || imagesLoaded < logos.length) return;
 
-    let currentIndex = 0;
-    const showNextPopup = () => {
-      if (!autoShowEnabled) return;
-      
-      handlePopupShow(currentIndex);
-      
-      setTimeout(() => {
-        if (autoShowEnabled) {
-          handlePopupHide();
-          currentIndex = (currentIndex + 3) % logos.length; // Skip 3 logos
-        }
-      }, 3000);
-    };
+    const interval = setInterval(() => {
+      const newPosition = (currentPosition + 1) % logos.length;
+      setCurrentPosition(newPosition);
 
-    const interval = setInterval(showNextPopup, 4000);
-    
-    return () => {
-      clearInterval(interval);
-    };
-  }, [autoShowEnabled]);
+      if (newPosition % 3 === 0) {
+        handlePopupShow(newPosition);
+        
+        setTimeout(() => {
+          if (autoShowEnabled) {
+            handlePopupHide();
+          }
+        }, 3000);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [autoShowEnabled, currentPosition, imagesLoaded]);
+
+  // Reset position when carousel restarts
+  useEffect(() => {
+    const marqueeInterval = setInterval(() => {
+      if (!isPaused) {
+        setCurrentPosition(0);
+      }
+    }, 15000);
+
+    return () => clearInterval(marqueeInterval);
+  }, [isPaused]);
+
+  if (imagesLoaded < logos.length) {
+    return <div className="py-16 flex justify-center">Loading...</div>;
+  }
 
   return (
-    <div className="py-16 relative">
+    <div className="py-16 relative" role="region" aria-label="Logo Carousel">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
@@ -101,6 +101,7 @@ export const LogoCarousel = () => {
           <div 
             style={{
               animationPlayState: isPaused ? 'paused' : 'running',
+              willChange: 'transform',
             }}
             className="flex animate-marquee space-x-16"
             onMouseEnter={() => {
@@ -110,8 +111,7 @@ export const LogoCarousel = () => {
             onMouseLeave={() => {
               setIsHovered(false);
               handlePopupHide();
-              // Add delay before re-enabling auto-show
-              setTimeout(() => setAutoShowEnabled(true), 1000);
+              setTimeout(() => setAutoShowEnabled(true), 500);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
@@ -130,10 +130,12 @@ export const LogoCarousel = () => {
                 >
                   <img
                     src={logo}
-                    alt={`Client logo ${idx + 1}`}
+                    alt={`${testimonials[idx % testimonials.length].company} logo`}
                     className={`h-[80px] w-auto object-contain transition-all duration-300 transform
                               ${openPopover === idx ? 'scale-110 grayscale-0' : 'grayscale hover:grayscale-0 group-hover:scale-110'}`}
                     style={{ maxWidth: 'none' }}
+                    onLoad={handleImageLoad}
+                    loading="eager"
                   />
                 </Popover.Trigger>
 
@@ -149,7 +151,7 @@ export const LogoCarousel = () => {
                     onMouseLeave={() => {
                       if (!isHovered) {
                         handlePopupHide();
-                        setTimeout(() => setAutoShowEnabled(true), 1000);
+                        setTimeout(() => setAutoShowEnabled(true), 500);
                       }
                     }}
                   >
