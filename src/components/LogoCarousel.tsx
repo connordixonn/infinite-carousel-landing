@@ -48,25 +48,23 @@ export const LogoCarousel = () => {
           TRUSTED BY INDUSTRY LEADERS
         </h2>
         <div className="overflow-hidden">
-          <div className="flex animate-marquee space-x-16 py-12">
+          <div className="flex animate-marquee space-x-16 py-24">
             {logos.concat(logos).map((logo, idx) => (
-              <div key={idx} className="relative z-10 flex items-center">
+              <div key={idx} className="relative z-10 flex items-center group">
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <img
                       src={logo}
                       alt={`Client logo ${idx + 1}`}
-                      className="h-[150px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                       style={{ maxWidth: 'none' }}
                     />
                   </HoverCardTrigger>
                   <HoverCardContent 
-                    className="w-[400px] z-[9999] bg-white shadow-lg rounded-lg border-0 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)]"
-                    side="top"
+                    className="w-[400px] z-[9999] bg-white shadow-lg rounded-lg border-0 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] absolute bottom-full mb-4"
+                    side="bottom"
                     align="center"
-                    sideOffset={40}
-                    avoidCollisions={true}
-                    collisionPadding={20}
+                    sideOffset={10}
                   >
                     <div className="p-4">
                       <div className="flex justify-between items-start mb-4">
