@@ -1,3 +1,5 @@
+import { Header } from './components/Header';
+import { LogoCarousel } from './components/LogoCarousel';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +20,11 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <Header />
+    <main className="pt-20">
+      <LogoCarousel />
+      {/* Other components */}
+    </main>
   </QueryClientProvider>
 );
 

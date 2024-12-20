@@ -27,152 +27,152 @@ const logos = [
 
 const testimonials = [
   {
-    from: { name: "marketing.team", domain: "yamaha.com" },
-    subject: "Re: Marketing Performance",
-    message: "The implementation has exceeded our expectations. Significant improvement in our digital presence.",
+    from: { name: "head.sales", domain: "yamaha.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Yamaha",
-    revenue: "$16.8 Billion (2022)",
+    revenue: "$16.8B ARR"
   },
   {
-    from: { name: "digital.marketing", domain: "fossil.com" },
-    subject: "Campaign Results",
-    message: "Outstanding results from our latest digital initiatives.",
+    from: { name: "head.sales", domain: "fossil.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Fossil Group",
-    revenue: "$1.68 Billion (2022)",
+    revenue: "$1.68B ARR"
   },
   {
-    from: { name: "operations", domain: "pgw.com" },
-    subject: "Partnership Success",
-    message: "The integration has streamlined our processes significantly.",
+    from: { name: "head.sales", domain: "pgw.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "PGW Auto Glass",
-    revenue: "$500+ Million",
+    revenue: "$500M ARR"
   },
   {
-    from: { name: "digital.team", domain: "hp.com" },
-    subject: "Digital Transformation Update",
-    message: "Remarkable improvement in our digital capabilities.",
+    from: { name: "head.sales", domain: "hp.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "HP",
-    revenue: "$63.0 Billion (2022)",
+    revenue: "$63.0B ARR"
   },
   {
-    from: { name: "marketing", domain: "reckitt.com" },
-    subject: "Campaign Performance",
-    message: "Exceptional results across all metrics.",
+    from: { name: "head.sales", domain: "reckitt.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Reckitt",
-    revenue: "$14.5 Billion (2022)",
+    revenue: "$14.5B ARR"
   },
   {
-    from: { name: "digital", domain: "oregontool.com" },
-    subject: "Digital Strategy Success",
-    message: "Significant improvements in our online presence.",
+    from: { name: "head.sales", domain: "oregontool.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Oregon Tool",
-    revenue: "$750+ Million",
+    revenue: "$750M ARR"
   },
   {
-    from: { name: "marketing", domain: "wacom.com" },
-    subject: "Marketing Results",
-    message: "The new strategy has delivered impressive outcomes.",
+    from: { name: "head.sales", domain: "wacom.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Wacom",
-    revenue: "$1.1 Billion (2022)",
+    revenue: "$1.1B ARR"
   },
   {
-    from: { name: "digital.marketing", domain: "lg.com" },
-    subject: "Digital Performance",
-    message: "Outstanding results from our digital transformation.",
+    from: { name: "head.sales", domain: "lg.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "LG",
-    revenue: "$51.4 Billion (2022)",
+    revenue: "$51.4B ARR"
   },
   {
-    from: { name: "marketing.team", domain: "verizon.com" },
-    subject: "Campaign Success",
-    message: "Exceptional performance across all channels.",
+    from: { name: "head.sales", domain: "verizon.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Verizon",
-    revenue: "$136.8 Billion (2022)",
+    revenue: "$136.8B ARR"
   },
   {
-    from: { name: "marketing", domain: "happydad.com" },
-    subject: "Growth Results",
-    message: "Impressive growth in our digital presence.",
+    from: { name: "head.sales", domain: "happydad.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Happy Dad",
-    revenue: "$100+ Million",
+    revenue: "$100M ARR"
   },
   {
-    from: { name: "digital", domain: "underarmour.com" },
-    subject: "Digital Success",
-    message: "Significant improvements in our online engagement.",
+    from: { name: "head.sales", domain: "underarmour.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Under Armour",
-    revenue: "$5.7 Billion (2022)",
+    revenue: "$5.7B ARR"
   },
   {
-    from: { name: "marketing.team", domain: "miele.com" },
-    subject: "Marketing Performance",
-    message: "Outstanding results from our latest initiatives.",
+    from: { name: "head.sales", domain: "miele.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Miele",
-    revenue: "$5.2 Billion (2022)",
+    revenue: "$5.2B ARR"
   },
   {
-    from: { name: "digital.marketing", domain: "siemens.com" },
-    subject: "Digital Transformation",
-    message: "Exceptional progress in our digital capabilities.",
+    from: { name: "head.sales", domain: "siemens.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Siemens",
-    revenue: "$75.8 Billion (2022)",
+    revenue: "$75.8B ARR"
   },
   {
-    from: { name: "marketing", domain: "brownandcaldwell.com" },
-    subject: "Strategy Success",
-    message: "Remarkable improvements in our market presence.",
+    from: { name: "head.sales", domain: "brownandcaldwell.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Brown and Caldwell",
-    revenue: "$500+ Million",
+    revenue: "$500M ARR"
   },
   {
-    from: { name: "digital.team", domain: "stanleyblackanddecker.com" },
-    subject: "Digital Results",
-    message: "Significant growth in our digital channels.",
+    from: { name: "head.sales", domain: "stanleyblackanddecker.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Stanley Black & Decker",
-    revenue: "$16.9 Billion (2022)",
+    revenue: "$16.9B ARR"
   },
   {
-    from: { name: "marketing", domain: "rainbird.com" },
-    subject: "Marketing Success",
-    message: "Outstanding performance in our digital initiatives.",
+    from: { name: "head.sales", domain: "rainbird.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Rain Bird",
-    revenue: "$750+ Million",
+    revenue: "$750M ARR"
   },
   {
-    from: { name: "digital.marketing", domain: "samsung.com" },
-    subject: "Digital Performance",
-    message: "Exceptional results across all metrics.",
+    from: { name: "head.sales", domain: "samsung.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Samsung",
-    revenue: "$244.2 Billion (2022)",
+    revenue: "$244.2B ARR"
   },
   {
-    from: { name: "marketing.team", domain: "hayward.com" },
-    subject: "Campaign Results",
-    message: "Impressive outcomes from our latest strategies.",
+    from: { name: "head.sales", domain: "hayward.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Hayward",
-    revenue: "$1.3 Billion (2022)",
+    revenue: "$1.3B ARR"
   },
   {
-    from: { name: "digital", domain: "nulo.com" },
-    subject: "Growth Update",
-    message: "Significant improvements in our market presence.",
+    from: { name: "head.sales", domain: "nulo.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Nulo Pet Food",
-    revenue: "$200+ Million",
+    revenue: "$200M ARR"
   },
   {
-    from: { name: "marketing", domain: "jostchemical.com" },
-    subject: "Marketing Performance",
-    message: "Outstanding results from our digital initiatives.",
+    from: { name: "head.sales", domain: "jostchemical.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Jost Chemical",
-    revenue: "$100+ Million",
+    revenue: "$100M ARR"
   },
   {
-    from: { name: "digital.team", domain: "ukg.com" },
-    subject: "Digital Success",
-    message: "Remarkable improvements in our digital presence.",
+    from: { name: "head.sales", domain: "ukg.com" },
+    subject: "Re: Enterprise Sales Growth",
+    message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "UKG",
-    revenue: "$3.3 Billion (2022)",
-  },
+    revenue: "$3.3B ARR"
+  }
 ];
 
 export const LogoCarousel = () => {
@@ -246,44 +246,33 @@ export const LogoCarousel = () => {
                         }}
                       >
                         <div className="overflow-hidden rounded-lg">
-                          <div className="px-3 py-2 bg-gray-50">
-                            <h3 className="text-sm font-medium text-gray-900 mb-2">
-                              {testimonials[idx % testimonials.length].subject}
-                            </h3>
+                          <div className="px-4 py-2 bg-white border-b border-gray-100">
                             <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2">
-                                <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs">
-                                  {testimonials[idx % testimonials.length].company.charAt(0)}
-                                </div>
-                                <div>
-                                  <div className="relative">
-                                    <span className="text-xs font-medium text-gray-700 blur-[2px] select-none">
-                                      {testimonials[idx % testimonials.length].from.name}
-                                    </span>
-                                    <span className="text-xs font-medium text-gray-700">
-                                      @{testimonials[idx % testimonials.length].from.domain}
-                                    </span>
-                                  </div>
-                                  <p className="text-[10px] text-gray-500">to me</p>
-                                </div>
-                              </div>
-                              <span className="text-[10px] text-gray-500">12:30 PM</span>
+                              <h3 className="text-[14px] font-medium text-gray-900">
+                                {testimonials[idx % testimonials.length].subject}
+                              </h3>
+                              <span className="text-xs px-2 py-1 bg-green-50 text-green-600 rounded">
+                                ✓ Booked
+                              </span>
+                            </div>
+                            <div className="mt-1 text-[13px] text-gray-500">
+                              To: <span className="text-gray-800">*****@youragency.com</span>
                             </div>
                           </div>
 
-                          <div className="px-3 py-2">
-                            <p className="text-xs text-gray-600 mb-4">
+                          <div className="px-4 py-3 bg-white">
+                            <p className="text-[13px] text-gray-600 leading-relaxed">
                               {testimonials[idx % testimonials.length].message}
                             </p>
-                            <div className="flex items-center justify-between text-[11px] pt-2">
-                              <span className="text-green-600 font-medium">✓ Call Booked</span>
-                              <div className="text-right">
-                                <p className="text-[10px] text-gray-600 mb-0.5">
+                            
+                            <div className="mt-4 pt-3 border-t border-gray-100">
+                              <div className="flex items-center justify-between">
+                                <div className="text-[13px] font-medium text-gray-900">
                                   {testimonials[idx % testimonials.length].company}
-                                </p>
-                                <p className="text-blue-600 font-medium">
+                                </div>
+                                <div className="text-[13px] font-medium text-gray-900">
                                   {testimonials[idx % testimonials.length].revenue}
-                                </p>
+                                </div>
                               </div>
                             </div>
                           </div>
