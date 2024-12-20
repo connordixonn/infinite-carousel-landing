@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
@@ -39,51 +39,10 @@ export const LogoCarousel = () => {
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [lastShownLogo, setLastShownLogo] = useState<number | null>(null);
-  
-  const CAROUSEL_DURATION = 15000;
-  const POPUP_INTERVAL = 4; // Show every 4th logo
-  const POPUP_DURATION = 5000;
 
   const handleImageLoad = (logo: string) => {
     setLoadedImages(prev => new Set(prev).add(logo));
   };
-
-  // Improved auto-show functionality
-  useEffect(() => {
-    if (isHovered) return;
-
-    let timeoutId: NodeJS.Timeout;
-    
-    const showPopup = () => {
-      const currentTime = Date.now();
-      const progress = (currentTime % CAROUSEL_DURATION) / CAROUSEL_DURATION;
-      const currentLogoIndex = Math.floor(progress * logos.length);
-
-      // Only show popup if:
-      // 1. It's a 4th logo position
-      // 2. We haven't shown this logo recently
-      // 3. The logo is different from the last shown
-      if (currentLogoIndex % POPUP_INTERVAL === 0 && 
-          currentLogoIndex !== 0 && 
-          currentLogoIndex !== lastShownLogo) {
-        
-        setLastShownLogo(currentLogoIndex);
-        handlePopupShow(currentLogoIndex);
-
-        timeoutId = setTimeout(() => {
-          handlePopupHide();
-        }, POPUP_DURATION);
-      }
-    };
-
-    const intervalId = setInterval(showPopup, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, [isHovered, lastShownLogo]);
 
   const handlePopupShow = (index: number) => {
     setOpenPopover(index);
@@ -94,15 +53,6 @@ export const LogoCarousel = () => {
     setOpenPopover(null);
     setIsPaused(false);
   };
-
-  // Reset lastShownLogo when carousel completes a cycle
-  useEffect(() => {
-    const resetInterval = setInterval(() => {
-      setLastShownLogo(null);
-    }, CAROUSEL_DURATION);
-
-    return () => clearInterval(resetInterval);
-  }, []);
 
   return (
     <div className="py-16 relative" role="region" aria-label="Logo Carousel">
@@ -160,14 +110,6 @@ export const LogoCarousel = () => {
                       className="w-[320px] bg-white shadow-lg rounded-lg animate-email-pop z-[9999] fixed
                                origin-[center_bottom]"
                       sideOffset={5}
-                      onMouseEnter={() => {
-                        setIsPaused(true);
-                      }}
-                      onMouseLeave={() => {
-                        if (!isHovered) {
-                          handlePopupHide();
-                        }
-                      }}
                     >
                       <div className="overflow-hidden rounded-lg">
                         <div className="px-3 py-2 bg-gray-50">
