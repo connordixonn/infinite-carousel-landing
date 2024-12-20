@@ -82,12 +82,12 @@ export const LogoCarousel = () => {
           <div className="flex space-x-16 animate-marquee overflow-visible">
             {duplicatedLogos.map((logo, idx) => (
               <HoverCard key={idx}>
-                <HoverCardTrigger className="relative z-30">
+                <HoverCardTrigger className="relative z-30 block">
                   <div className="flex-shrink-0 group cursor-pointer">
                     <img
                       src={logo}
                       alt="Client logo"
-                      className="h-12 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
+                      className="h-32 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 </HoverCardTrigger>
