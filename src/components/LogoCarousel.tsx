@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import {
   HoverCard,
   HoverCardContent,
@@ -42,15 +42,17 @@ const testimonials = [
 ];
 
 export const LogoCarousel = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollSpeed = 0.5;
+    const scrollSpeed = 1.0;
     const scrollInterval = setInterval(() => {
-      setScrollPosition((prevPosition) => {
-        const newPosition = prevPosition + scrollSpeed;
-        return newPosition >= 100 ? 0 : newPosition;
-      });
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft += scrollSpeed;
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+          scrollRef.current.scrollLeft = 0;
+        }
+      }
     }, 20);
 
     return () => clearInterval(scrollInterval);
@@ -62,8 +64,8 @@ export const LogoCarousel = () => {
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="mx-auto overflow-hidden">
-          <div className="flex space-x-16" style={{ transform: `translateX(-${scrollPosition}%)` }}>
+        <div className="mx-auto overflow-hidden" ref={scrollRef}>
+          <div className="flex space-x-16">
             {logos.concat(logos).map((logo, idx) => (
               <HoverCard key={idx}>
                 <HoverCardTrigger>
