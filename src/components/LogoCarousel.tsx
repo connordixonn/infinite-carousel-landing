@@ -41,23 +41,21 @@ export const LogoCarousel = () => {
 
   // Auto-show functionality
   useEffect(() => {
-    if (isPaused) return; // Don't start new auto-show if paused
+    if (isPaused) return;
 
     const interval = setInterval(() => {
-      // Show popup every 3rd logo
       const currentPosition = Math.floor(Date.now() / 1000) % (logos.length * 3);
       if (currentPosition % 3 === 0) {
         const logoIndex = Math.floor(currentPosition / 3);
         setOpenPopover(logoIndex);
         setIsPaused(true);
 
-        // Hide popup and resume after 3 seconds
         setTimeout(() => {
           setOpenPopover(null);
           setIsPaused(false);
         }, 3000);
       }
-    }, 1000); // Check every second
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -70,22 +68,20 @@ export const LogoCarousel = () => {
         </h2>
         <div className="mx-auto overflow-hidden">
           <div 
-            className={`flex animate-marquee space-x-16 ${(isHovered || isPaused) ? '!animation-play-state-paused' : ''}`}
-            onMouseEnter={() => {
-              setIsHovered(true);
-              setIsPaused(true);
+            style={{
+              animationPlayState: isHovered || isPaused ? 'paused' : 'running',
             }}
+            className="flex animate-marquee space-x-16"
+            onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => {
               setIsHovered(false);
-              setIsPaused(false);
-              setOpenPopover(null);
+              if (!isPaused) setOpenPopover(null);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
               <Popover.Root 
                 key={idx}
                 open={openPopover === idx}
-                onOpenChange={(open) => open && setOpenPopover(idx)}
               >
                 <Popover.Trigger 
                   className="relative z-10 flex items-center outline-none group"
