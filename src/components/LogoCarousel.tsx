@@ -245,8 +245,8 @@ export const LogoCarousel = () => {
                           setIsPaused(false);
                         }}
                       >
-                        <div className="overflow-hidden rounded-lg">
-                          <div className="px-4 py-2 bg-white border-b border-gray-100">
+                        <div className="overflow-hidden rounded-lg ring-1 ring-gray-100">
+                          <div className="px-4 py-2 bg-white">
                             <div className="flex items-center justify-between">
                               <h3 className="text-[14px] font-medium text-gray-900">
                                 {testimonials[idx % testimonials.length].subject}
@@ -266,12 +266,19 @@ export const LogoCarousel = () => {
                             </p>
                             
                             <div className="mt-4 pt-3 border-t border-gray-100">
-                              <div className="flex items-center justify-between">
-                                <div className="text-[13px] font-medium text-gray-900">
-                                  {testimonials[idx % testimonials.length].company}
-                                </div>
-                                <div className="text-[13px] font-medium text-gray-900">
-                                  {testimonials[idx % testimonials.length].revenue}
+                              <div className="flex flex-col gap-1">
+                                <div className="flex items-center justify-between">
+                                  <div>
+                                    <div className="text-[13px] font-medium text-gray-900">
+                                      {testimonials[idx % testimonials.length].company}
+                                    </div>
+                                    <div className="text-[11px] text-gray-500 mt-0.5">
+                                      Head of Enterprise Sales
+                                    </div>
+                                  </div>
+                                  <div className="text-[13px] font-medium text-blue-600">
+                                    {testimonials[idx % testimonials.length].revenue}
+                                  </div>
                                 </div>
                               </div>
                             </div>

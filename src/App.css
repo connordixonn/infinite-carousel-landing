@@ -78,6 +78,7 @@
   animation: email-pop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
   transform-origin: center bottom;
+  border: none;
 }
 
 @keyframes email-pop {
@@ -107,6 +108,12 @@
 .shadow-lg {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08),
               0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Add this to ensure clean borders */
+.ring-1 {
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700&display=swap');
