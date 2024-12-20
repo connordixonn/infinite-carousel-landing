@@ -38,11 +38,6 @@ export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
 
-  const blurEmail = (email: string) => {
-    const [name, domain] = email.split('@');
-    return `${name.charAt(0)}${'\u2022'.repeat(name.length - 1)}@${domain}`;
-  };
-
   return (
     <div className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -62,26 +57,27 @@ export const LogoCarousel = () => {
                 onOpenChange={(open) => setOpenPopover(open ? idx : null)}
               >
                 <Popover.Trigger 
-                  className="relative z-10 flex items-center outline-none"
+                  className="relative z-10 flex items-center outline-none group"
                   onMouseEnter={() => setOpenPopover(idx)}
                   onMouseLeave={() => setOpenPopover(null)}
                 >
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
-                    className="h-[80px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-[80px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300
+                             group-hover:scale-110 transform"
                     style={{ maxWidth: 'none' }}
                   />
                 </Popover.Trigger>
 
                 <Popover.Portal>
                   <Popover.Content
-                    className="w-[280px] bg-white shadow-md rounded-sm animate-bubble-pop z-[9999] fixed"
+                    className="w-[320px] bg-white shadow-md rounded-sm animate-bubble-pop z-[9999] fixed"
                     sideOffset={5}
                     onMouseEnter={() => setOpenPopover(idx)}
                     onMouseLeave={() => setOpenPopover(null)}
                   >
-                    <div className="border border-gray-200 divide-y divide-gray-100">
+                    <div className="bg-white shadow-sm">
                       <div className="px-3 py-2 bg-gray-50">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
@@ -89,9 +85,12 @@ export const LogoCarousel = () => {
                               {testimonials[idx % testimonials.length].company.charAt(0)}
                             </div>
                             <div>
-                              <p className="text-xs font-medium text-gray-700">
-                                {blurEmail(testimonials[idx % testimonials.length].from)}
-                              </p>
+                              <div className="relative">
+                                <p className="text-xs font-medium text-gray-700 blur-[2px] select-none">
+                                  {testimonials[idx % testimonials.length].from}
+                                </p>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-white" />
+                              </div>
                               <p className="text-[10px] text-gray-500">to me</p>
                             </div>
                           </div>
@@ -99,14 +98,14 @@ export const LogoCarousel = () => {
                         </div>
                       </div>
 
-                      <div className="px-3 py-2 bg-white">
+                      <div className="px-3 py-2">
                         <h3 className="text-sm font-medium text-gray-900 mb-2">
                           {testimonials[idx % testimonials.length].subject}
                         </h3>
                         <p className="text-xs text-gray-600 mb-4">
                           {testimonials[idx % testimonials.length].message}
                         </p>
-                        <div className="flex items-center justify-between text-[11px] border-t pt-2">
+                        <div className="flex items-center justify-between text-[11px] pt-2">
                           <span className="text-green-600 font-medium">✓ Call Booked</span>
                           <div className="text-right">
                             <p className="text-[10px] text-gray-600 mb-0.5">{testimonials[idx % testimonials.length].company}</p>
