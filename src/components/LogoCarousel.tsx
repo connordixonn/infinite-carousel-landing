@@ -56,7 +56,7 @@ export const LogoCarousel = () => {
                     <img
                       src={logo}
                       alt={`Client logo ${idx + 1}`}
-                      className="h-[200px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-[150px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
                       style={{ maxWidth: 'none' }}
                     />
                   </HoverCardTrigger>
@@ -64,7 +64,9 @@ export const LogoCarousel = () => {
                     className="w-[400px] z-[9999] bg-white shadow-lg rounded-lg border-0 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)]"
                     side="top"
                     align="center"
-                    sideOffset={20}
+                    sideOffset={40}
+                    avoidCollisions={true}
+                    collisionPadding={20}
                   >
                     <div className="p-4">
                       <div className="flex justify-between items-start mb-4">
