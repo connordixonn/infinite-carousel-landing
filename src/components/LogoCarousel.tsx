@@ -39,6 +39,7 @@ const testimonials = [
 
 export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [openPopover, setOpenPopover] = useState<number | null>(null);
 
   return (
     <div className="py-24 relative">
@@ -53,8 +54,16 @@ export const LogoCarousel = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             {logos.concat(logos).map((logo, idx) => (
-              <Popover.Root key={idx}>
-                <Popover.Trigger className="relative z-10 flex items-center outline-none">
+              <Popover.Root 
+                key={idx}
+                open={openPopover === idx}
+                onOpenChange={(open) => setOpenPopover(open ? idx : null)}
+              >
+                <Popover.Trigger 
+                  className="relative z-10 flex items-center outline-none"
+                  onMouseEnter={() => setOpenPopover(idx)}
+                  onMouseLeave={() => setOpenPopover(null)}
+                >
                   <img
                     src={logo}
                     alt={`Client logo ${idx + 1}`}
@@ -69,6 +78,8 @@ export const LogoCarousel = () => {
                              shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
                              z-[9999] data-[state=open]:animate-bubble-pop"
                     sideOffset={5}
+                    onMouseEnter={() => setOpenPopover(idx)}
+                    onMouseLeave={() => setOpenPopover(null)}
                   >
                     <div className="p-3">
                       <div className="flex items-center justify-between mb-2">
