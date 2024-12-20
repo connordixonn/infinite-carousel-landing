@@ -31,30 +31,6 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  @keyframes email-pop {
-    0% {
-      opacity: 0;
-      transform: scale(0.8) translateY(10px);
-      filter: blur(8px);
-    }
-    60% {
-      transform: scale(1.02) translateY(-2px);
-      filter: blur(0px);
-    }
-    80% {
-      transform: scale(0.98) translateY(1px);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
 }
 
 .card {
@@ -65,11 +41,15 @@
   color: #888;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 15s linear infinite;
-  will-change: transform;
+  animation: marquee 24s linear infinite;
 }
 
 .animate-marquee-slow {
@@ -98,28 +78,25 @@
   animation: bubble-pop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
+@keyframes email-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+    filter: blur(8px);
+  }
+  60% {
+    transform: scale(1.02) translateY(-2px);
+    filter: blur(0px);
+  }
+  80% {
+    transform: scale(0.98) translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 .animate-email-pop {
   animation: email-pop 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  will-change: transform, opacity, filter;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
-  
-  .animate-email-pop {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
