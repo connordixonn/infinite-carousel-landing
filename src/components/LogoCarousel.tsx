@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
   "/lovable-uploads/c0c3535b-c3e0-437c-8df6-de7b715f2932.png",
@@ -57,27 +53,24 @@ export const LogoCarousel = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             {logos.concat(logos).map((logo, idx) => (
-              <div key={idx} className="relative z-10 flex items-center group">
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <img
-                      src={logo}
-                      alt={`Client logo ${idx + 1}`}
-                      className="h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      style={{ maxWidth: 'none' }}
-                    />
-                  </HoverCardTrigger>
-                  <HoverCardContent 
-                    className="w-[250px] z-[9999] bg-white shadow-lg rounded-xl border-0 
+              <Popover.Root key={idx}>
+                <Popover.Trigger className="relative z-10 flex items-center outline-none">
+                  <img
+                    src={logo}
+                    alt={`Client logo ${idx + 1}`}
+                    className="h-[120px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    style={{ maxWidth: 'none' }}
+                  />
+                </Popover.Trigger>
+
+                <Popover.Portal>
+                  <Popover.Content
+                    className="w-[250px] bg-white shadow-lg rounded-xl border-0 
                              shadow-[0_2px_10px_-4px_rgba(0,0,0,0.3)] animate-bubble-pop
-                             data-[state=open]:animate-bubble-pop"
-                    side="top"
-                    align="center"
+                             z-[9999] data-[state=open]:animate-bubble-pop"
+                    sideOffset={5}
                   >
-                    <div className="p-3 relative">
-                      <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 
-                                    w-4 h-4 bg-white rotate-45"></div>
-                      
+                    <div className="p-3">
                       <div className="flex items-center justify-between mb-2">
                         <span className="px-1.5 py-0.5 text-[10px] font-medium bg-green-50 text-green-700 rounded-full">
                           Call Booked
@@ -91,9 +84,10 @@ export const LogoCarousel = () => {
                         {testimonials[idx % testimonials.length].message}
                       </p>
                     </div>
-                  </HoverCardContent>
-                </HoverCard>
-              </div>
+                    <Popover.Arrow className="fill-white" />
+                  </Popover.Content>
+                </Popover.Portal>
+              </Popover.Root>
             ))}
           </div>
         </div>
