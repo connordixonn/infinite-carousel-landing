@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as Popover from '@radix-ui/react-popover';
 
 const logos = [
@@ -38,8 +38,7 @@ export const LogoCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [openPopover, setOpenPopover] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [autoShowEnabled, setAutoShowEnabled] = useState(true);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   const handlePopupShow = (index: number) => {
     setOpenPopover(index);
@@ -50,42 +49,6 @@ export const LogoCarousel = () => {
     setOpenPopover(null);
     setIsPaused(false);
   };
-
-  // Auto-show functionality with position tracking
-  useEffect(() => {
-    if (!autoShowEnabled) return;
-
-    const interval = setInterval(() => {
-      // Update position based on time passed
-      const newPosition = (currentPosition + 1) % logos.length;
-      setCurrentPosition(newPosition);
-
-      // Show popup every 3rd position
-      if (newPosition % 3 === 0) {
-        handlePopupShow(newPosition);
-        
-        // Hide popup after 3 seconds
-        setTimeout(() => {
-          if (autoShowEnabled) {
-            handlePopupHide();
-          }
-        }, 3000);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [autoShowEnabled, currentPosition]);
-
-  // Reset position when carousel restarts
-  useEffect(() => {
-    const marqueeInterval = setInterval(() => {
-      if (!isPaused) {
-        setCurrentPosition(0);
-      }
-    }, 15000); // Match this with your marquee animation duration
-
-    return () => clearInterval(marqueeInterval);
-  }, [isPaused]);
 
   return (
     <div className="py-16 relative">
@@ -101,12 +64,10 @@ export const LogoCarousel = () => {
             className="flex animate-marquee space-x-16"
             onMouseEnter={() => {
               setIsHovered(true);
-              setAutoShowEnabled(false);
             }}
             onMouseLeave={() => {
               setIsHovered(false);
               handlePopupHide();
-              setTimeout(() => setAutoShowEnabled(true), 500);
             }}
           >
             {logos.concat(logos).map((logo, idx) => (
@@ -139,12 +100,10 @@ export const LogoCarousel = () => {
                     sideOffset={5}
                     onMouseEnter={() => {
                       setIsPaused(true);
-                      setAutoShowEnabled(false);
                     }}
                     onMouseLeave={() => {
                       if (!isHovered) {
                         handlePopupHide();
-                        setTimeout(() => setAutoShowEnabled(true), 500);
                       }
                     }}
                   >
