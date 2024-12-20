@@ -50,43 +50,46 @@ export const LogoCarousel = () => {
         <div className="overflow-hidden">
           <div className="flex animate-marquee space-x-16">
             {logos.concat(logos).map((logo, idx) => (
-              <HoverCard key={idx}>
-                <HoverCardTrigger>
-                  <img
-                    src={logo}
-                    alt={`Client logo ${idx + 1}`}
-                    className="h-48 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </HoverCardTrigger>
-                <HoverCardContent 
-                  className="w-80 z-[999]"
-                  side="top"
-                  align="center"
-                >
-                  <div className="space-y-4">
-                    <div className="border-b pb-2">
-                      <p className="text-sm text-gray-500">{testimonials[idx % testimonials.length].from}</p>
-                      <p className="font-medium">{testimonials[idx % testimonials.length].subject}</p>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      {testimonials[idx % testimonials.length].message}
-                    </p>
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <p className="text-sm font-medium text-gray-900">
-                          {testimonials[idx % testimonials.length].company}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {testimonials[idx % testimonials.length].title}
+              <div key={idx} className="relative">
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <img
+                      src={logo}
+                      alt={`Client logo ${idx + 1}`}
+                      className="h-48 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </HoverCardTrigger>
+                  <HoverCardContent 
+                    className="w-80 z-[999] bg-white shadow-lg"
+                    side="top"
+                    align="center"
+                    sideOffset={5}
+                  >
+                    <div className="space-y-4">
+                      <div className="border-b pb-2">
+                        <p className="text-sm text-gray-500">{testimonials[idx % testimonials.length].from}</p>
+                        <p className="font-medium">{testimonials[idx % testimonials.length].subject}</p>
+                      </div>
+                      <p className="text-sm text-gray-600">
+                        {testimonials[idx % testimonials.length].message}
+                      </p>
+                      <div className="flex justify-between items-end">
+                        <div>
+                          <p className="text-sm font-medium text-gray-900">
+                            {testimonials[idx % testimonials.length].company}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {testimonials[idx % testimonials.length].title}
+                          </p>
+                        </div>
+                        <p className="text-sm font-medium text-blue-500">
+                          {testimonials[idx % testimonials.length].revenue}
                         </p>
                       </div>
-                      <p className="text-sm font-medium text-blue-500">
-                        {testimonials[idx % testimonials.length].revenue}
-                      </p>
                     </div>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
             ))}
           </div>
         </div>
