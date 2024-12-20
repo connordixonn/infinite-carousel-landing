@@ -82,7 +82,7 @@ export const LogoCarousel = () => {
           <div className="flex space-x-16 animate-marquee overflow-visible">
             {duplicatedLogos.map((logo, idx) => (
               <HoverCard key={idx}>
-                <HoverCardTrigger asChild>
+                <HoverCardTrigger className="relative z-20">
                   <div className="flex-shrink-0 group cursor-pointer">
                     <img
                       src={logo}
@@ -91,7 +91,7 @@ export const LogoCarousel = () => {
                     />
                   </div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 bg-white shadow-lg rounded-lg p-4 z-[999] relative">
+                <HoverCardContent className="w-80 z-50" side="top" align="center">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-sm font-medium text-gray-900">
