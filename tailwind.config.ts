@@ -29,12 +29,34 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#33C3F0",
+          DEFAULT: "#0EA5E9", // Ocean Blue - Use sparingly for attention
+          light: "#D3E4FD",   // Soft Blue - For backgrounds and subtle elements
+          dark: "#0369A1",    // Deep Blue - For hover states and emphasis
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#D3E4FD",
+          DEFAULT: "#8E9196", // Neutral Gray - For balance and sophistication
+          light: "#F1F5F9",   // Light Gray - For backgrounds
+          dark: "#403E43",    // Charcoal Gray - For text and dark sections
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        accent: {
+          DEFAULT: "#1EAEDB", // Bright Blue - For interactive elements
+          light: "#7DD3FC",   // Sky Blue - For highlights
+          dark: "#0C4A6E",    // Navy Blue - For depth
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        neutral: {
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -43,10 +65,6 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "#1EAEDB",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
