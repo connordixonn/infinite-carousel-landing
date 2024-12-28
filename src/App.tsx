@@ -15,16 +15,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-    <Header />
-    <main className="pt-20">
-      <LogoCarousel />
-      {/* Other components */}
-    </main>
   </QueryClientProvider>
 );
 
