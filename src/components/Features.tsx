@@ -55,7 +55,7 @@ export const Features = ({ title, subtitle, description, variant }: FeaturesProp
             <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-[#60A5FA]/10 text-[#60A5FA]">
               {subtitle}
             </span>
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-[#222222]">
+            <h2 className="mt-6 text-4xl font-bold tracking-tight text-[#333333]">
               {title}
             </h2>
             <p className="mt-4 text-lg text-[#555555] max-w-2xl mx-auto">
@@ -75,7 +75,7 @@ export const Features = ({ title, subtitle, description, variant }: FeaturesProp
                   </div>
                   <ArrowUpRight className="h-5 w-5 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-[#60A5FA]" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#60A5FA] transition-colors duration-300 text-[#222222]">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#60A5FA] transition-colors duration-300 text-[#333333]">
                   {feature.title}
                 </h3>
                 <p className="text-[#555555] leading-relaxed">
@@ -100,7 +100,7 @@ export const Features = ({ title, subtitle, description, variant }: FeaturesProp
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-white">
             {title}
           </h2>
-          <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
@@ -120,7 +120,7 @@ export const Features = ({ title, subtitle, description, variant }: FeaturesProp
               <h3 className="text-xl font-semibold mb-3 text-white">
                 {feature.title}
               </h3>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 {feature.description}
               </p>
             </div>
