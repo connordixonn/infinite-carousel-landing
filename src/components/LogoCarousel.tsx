@@ -186,22 +186,25 @@ export const LogoCarousel = () => {
 
   return (
     <div className="py-16 relative" role="region" aria-label="Logo Carousel">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[100vw] mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
           TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="mx-auto overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <div 
             style={{
               animationPlayState: isPaused ? 'paused' : 'running',
               willChange: 'transform',
+              width: 'fit-content',
+              display: 'flex',
+              gap: '4rem'
             }}
-            className="flex animate-marquee space-x-16"
+            className="animate-marquee"
           >
             {logos.concat(logos).map((logo, idx) => (
               <div 
                 key={idx}
-                className="relative"
+                className="relative shrink-0"
                 onMouseEnter={() => {
                   setOpenPopover(idx);
                   setIsPaused(true);
