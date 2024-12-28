@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { LogoCarousel } from "@/components/LogoCarousel";
 import { Features } from "@/components/Features";
 import { CaseStudies } from "@/components/CaseStudies";
+import { EnterpriseSolutions } from "@/components/EnterpriseSolutions";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <div className="relative">
         <Hero />
         <LogoCarousel />
+        <EnterpriseSolutions />
         <Features 
           title="Enterprise Solutions" 
           subtitle="Powerful Features for Growing Businesses"
