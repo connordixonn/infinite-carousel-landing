@@ -35,7 +35,7 @@ export const Features = () => {
           {features.map((feature) => (
             <div 
               key={feature.title} 
-              className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:translate-y-[-4px]"
             >
               <div className="absolute -top-4 -left-4 p-3 bg-[#60A5FA] rounded-xl shadow-lg">
                 <feature.icon className="h-6 w-6 text-white" />
@@ -44,7 +44,9 @@ export const Features = () => {
                 <h3 className="text-xl font-semibold mb-4 text-[#1a1f36]">
                   {feature.title}
                 </h3>
-                <p className="text-[#374151]">{feature.description}</p>
+                <p className="text-[#374151] leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
