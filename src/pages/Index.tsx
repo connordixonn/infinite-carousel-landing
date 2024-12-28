@@ -5,13 +5,12 @@ import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 bg-grid-slate-200/[0.07] bg-[size:20px]" />
+    <div className="relative min-h-screen bg-white">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
       
-      {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl" />
+      {/* Very subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
       
       {/* Content */}
       <div className="relative">
