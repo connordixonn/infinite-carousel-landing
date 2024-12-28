@@ -39,8 +39,10 @@ export const Features = ({
   description 
 }: FeaturesProps) => {
   return (
-    <section className="relative py-24 overflow-hidden bg-white">
-      <div className="absolute inset-0 bg-grid-slate-100 bg-[size:20px]" />
+    <section className="relative py-24 overflow-visible">
+      {/* Section-specific background that preserves the unified look */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white/50 backdrop-blur-[2px]" />
+      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 animate-fade-up">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4 font-cabinet">
@@ -60,10 +62,10 @@ export const Features = ({
             <div
               key={feature.title}
               className={cn(
-                "group relative bg-white rounded-2xl p-8",
+                "group relative bg-white/80 rounded-2xl p-8",
                 "transition-all duration-300 hover:scale-105",
                 "border border-gray-100 shadow-lg hover:shadow-xl",
-                "glass-card"
+                "backdrop-blur-sm"
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
