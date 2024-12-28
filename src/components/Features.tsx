@@ -27,9 +27,17 @@ const features = [
 
 interface FeaturesProps {
   variant?: 'primary' | 'secondary';
+  title?: string;
+  subtitle?: string;
+  description?: string;
 }
 
-export const Features = ({ variant = 'primary' }: FeaturesProps) => {
+export const Features = ({ 
+  variant = 'primary',
+  title = "How We Help You Grow",
+  subtitle,
+  description 
+}: FeaturesProps) => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background decorative elements */}
@@ -40,9 +48,15 @@ export const Features = ({ variant = 'primary' }: FeaturesProps) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
-            How We Help You Grow
+            {title}
           </h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
+          {subtitle && (
+            <p className="text-xl text-gray-600 mb-4">{subtitle}</p>
+          )}
+          {description && (
+            <p className="text-gray-500">{description}</p>
+          )}
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mt-6" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
