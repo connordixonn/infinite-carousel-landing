@@ -21,13 +21,13 @@ const features = [
 export const Features = () => {
   return (
     <div className="py-32 relative overflow-hidden bg-[#1a1f36]">
-      <div className="absolute inset-y-0 right-0 w-1/2 bg-[#60A5FA]/5 blur-3xl transform rotate-12"></div>
+      <div className="absolute inset-y-0 right-0 w-1/2 bg-[#60A5FA]/10 blur-3xl transform rotate-12"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Transform Your Enterprise Sales
           </h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <p className="mt-4 text-lg text-blue-100/80">
             Unlock new levels of growth with our enterprise-focused approach
           </p>
         </div>
@@ -35,16 +35,16 @@ export const Features = () => {
           {features.map((feature) => (
             <div 
               key={feature.title} 
-              className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10 hover:translate-y-[-4px]"
+              className="relative p-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:translate-y-[-4px] group"
             >
-              <div className="absolute -top-4 -left-4 p-3 bg-[#60A5FA] rounded-xl shadow-lg">
+              <div className="absolute -top-4 -left-4 p-3 bg-gradient-to-br from-[#0EA5E9] to-[#60A5FA] rounded-xl shadow-lg group-hover:scale-105 transition-transform">
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
               <div className="pt-4">
-                <h3 className="text-xl font-semibold mb-4 text-[#1a1f36]">
+                <h3 className="text-xl font-semibold mb-4 text-[#0f172a] group-hover:text-[#0EA5E9] transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-[#374151] leading-relaxed">
+                <p className="text-[#334155] leading-relaxed">
                   {feature.description}
                 </p>
               </div>
