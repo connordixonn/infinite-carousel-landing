@@ -23,28 +23,20 @@ export default {
         cabinet: ['Cabinet Grotesk', 'sans-serif'],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0EA5E9", // Ocean Blue - Use sparingly for attention
-          light: "#BAE6FD",   // Soft Sky Blue - For subtle highlights
-          dark: "#075985",    // Deep Ocean - For depth and emphasis
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#0EA5E9",
+          light: "#BAE6FD",
+          dark: "#075985",
         },
         secondary: {
-          DEFAULT: "#6366F1", // Indigo - For secondary actions
-          light: "#E0E7FF",   // Soft Indigo - For backgrounds
-          dark: "#4338CA",    // Deep Indigo - For contrast
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#6366F1",
+          light: "#E0E7FF",
+          dark: "#4338CA",
         },
         accent: {
-          DEFAULT: "#F43F5E", // Rose - For important highlights
-          light: "#FFE4E6",   // Soft Rose - For subtle accents
-          dark: "#BE123C",    // Deep Rose - For emphasis
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#F43F5E",
+          light: "#FFE4E6",
+          dark: "#BE123C",
         },
         neutral: {
           50: "#FAFAFA",
@@ -57,22 +49,6 @@ export default {
           700: "#3F3F46",
           800: "#27272A",
           900: "#18181B",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
         },
       },
       keyframes: {
