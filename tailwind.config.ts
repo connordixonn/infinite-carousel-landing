@@ -23,6 +23,9 @@ export default {
         cabinet: ['Cabinet Grotesk', 'sans-serif'],
       },
       colors: {
+        border: {
+          DEFAULT: "hsl(var(--border))",
+        },
         primary: {
           DEFAULT: "#0EA5E9",
           light: "#BAE6FD",
