@@ -31,7 +31,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Yamaha",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$16.8B ARR"
   },
   {
@@ -39,7 +38,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Fossil Group",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.68B ARR"
   },
   {
@@ -47,7 +45,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "PGW Auto Glass",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$500M ARR"
   },
   {
@@ -55,7 +52,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "HP",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$63.0B ARR"
   },
   {
@@ -63,7 +59,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Reckitt",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$14.5B ARR"
   },
   {
@@ -71,7 +66,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Oregon Tool",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$750M ARR"
   },
   {
@@ -79,7 +73,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Wacom",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.1B ARR"
   },
   {
@@ -87,7 +80,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "LG",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$51.4B ARR"
   },
   {
@@ -95,7 +87,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Verizon",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$136.8B ARR"
   },
   {
@@ -103,7 +94,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Happy Dad",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$100M ARR"
   },
   {
@@ -111,7 +101,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Under Armour",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$5.7B ARR"
   },
   {
@@ -119,7 +108,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Miele",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$5.2B ARR"
   },
   {
@@ -127,7 +115,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Siemens",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$75.8B ARR"
   },
   {
@@ -135,7 +122,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Brown and Caldwell",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$500M ARR"
   },
   {
@@ -143,7 +129,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Stanley Black & Decker",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$16.9B ARR"
   },
   {
@@ -151,7 +136,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Rain Bird",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$750M ARR"
   },
   {
@@ -159,7 +143,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Samsung",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$244.2B ARR"
   },
   {
@@ -167,7 +150,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Hayward",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.3B ARR"
   },
   {
@@ -175,7 +157,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Nulo Pet Food",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$200M ARR"
   },
   {
@@ -183,7 +164,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Jost Chemical",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$100M ARR"
   },
   {
@@ -191,7 +171,6 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "UKG",
-    jobTitle: "Head of Enterprise Sales",
     revenue: "$3.3B ARR"
   }
 ];
@@ -205,106 +184,114 @@ export const LogoCarousel = () => {
     setLoadedImages(prev => new Set(prev).add(logo));
   };
 
-  const handleMouseEnter = (idx: number) => {
-    setOpenPopover(idx);
-    setIsPaused(true);
-  };
-
-  const handleMouseLeave = () => {
-    setOpenPopover(null);
-    setIsPaused(false);
-  };
-
   return (
-    <div className="relative py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="py-16 relative" role="region" aria-label="Logo Carousel">
+      <div className="max-w-[100vw] mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
-          WE BRING OUR CLIENTS WHALES
+          TRUSTED BY INDUSTRY LEADERS
         </h2>
-        <div className="overflow-hidden">
-          <div
-            className={`flex animate-marquee space-x-16`}
-            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+        <div className="relative w-full overflow-hidden">
+          <div 
+            style={{
+              animationPlayState: isPaused ? 'paused' : 'running',
+              willChange: 'transform',
+              width: 'fit-content',
+              display: 'flex',
+              gap: '4rem'
+            }}
+            className="animate-marquee"
           >
-            {logos.concat(logos).map((logo, idx) => {
-              const testimonial = testimonials[idx % testimonials.length];
-              return (
-                <div key={idx} className="relative">
-                  <Popover.Root open={openPopover === idx}>
-                    <Popover.Trigger
-                      onMouseEnter={() => handleMouseEnter(idx)}
-                      onMouseLeave={handleMouseLeave}
-                      className="outline-none cursor-pointer"
+            {logos.concat(logos).map((logo, idx) => (
+              <div 
+                key={idx}
+                className="relative shrink-0"
+                onMouseEnter={() => {
+                  setOpenPopover(idx);
+                  setIsPaused(true);
+                }}
+                onMouseLeave={() => {
+                  setOpenPopover(null);
+                  setIsPaused(false);
+                }}
+              >
+                <Popover.Root open={openPopover === idx}>
+                  <Popover.Trigger className="relative z-10 flex items-center outline-none group cursor-pointer">
+                    <div 
+                      className="relative h-[40px] w-[120px] flex items-center justify-center"
+                      style={{ zIndex: openPopover === idx ? 20 : 10 }}
                     >
-                      <div className="relative">
-                        {!loadedImages.has(logo) && (
-                          <div className="absolute inset-0 bg-gray-100 animate-pulse rounded" />
-                        )}
-                        <img
-                          src={logo}
-                          alt={`${testimonial.company} logo`}
-                          className={`h-[80px] w-auto object-contain transition-transform duration-300
-                                      ${openPopover === idx ? 'scale-105 grayscale-0' : 'grayscale hover:grayscale-0 hover:scale-105'}
-                                      ${loadedImages.has(logo) ? 'opacity-100' : 'opacity-0'}`}
-                          onLoad={() => handleImageLoad(logo)}
-                          loading="eager"
-                        />
-                      </div>
-                    </Popover.Trigger>
-                    {loadedImages.has(logo) && (
-                      <Popover.Portal>
-                        <Popover.Content
-                          className="w-[320px] bg-white shadow-lg rounded-lg animate-email-pop origin-[center_bottom]"
-                          sideOffset={5}
-                          onMouseEnter={() => setIsPaused(true)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          <div className="overflow-hidden rounded-lg">
-                            <div className="px-4 py-2 bg-white">
-                              <div className="flex items-center justify-between">
-                                <h3 className="text-[14px] font-medium text-gray-900">
-                                  {testimonial.subject}
-                                </h3>
-                                <span className="text-xs px-2 py-1 bg-green-50 text-green-600 rounded">
-                                  ✓ Booked
-                                </span>
-                              </div>
-                              <div className="mt-1 text-[13px] text-gray-500">
-                                To: <span className="text-gray-800">*****@youragency.com</span>
-                              </div>
-                            </div>
+                      {!loadedImages.has(logo) && (
+                        <div className="absolute inset-0 bg-gray-100 animate-pulse rounded" />
+                      )}
+                      <img
+                        src={logo}
+                        alt={`${testimonials[idx % testimonials.length].company} logo`}
+                        className={`h-auto w-auto max-h-[40px] max-w-[120px] object-contain transition-all duration-300 transform
+                                  ${openPopover === idx ? 'scale-110 grayscale-0' : 'grayscale hover:grayscale-0 group-hover:scale-110'}
+                                  ${loadedImages.has(logo) ? 'opacity-100' : 'opacity-0'}`}
+                        onLoad={() => handleImageLoad(logo)}
+                        loading="eager"
+                      />
+                    </div>
+                  </Popover.Trigger>
 
-                            <div className="px-4 py-3 bg-white">
-                              <p className="text-[13px] text-gray-600 leading-relaxed">
-                                {testimonial.message}
-                              </p>
-                              
-                              <div className="mt-4 pt-3 border-t border-gray-100">
-                                <div className="flex flex-col gap-1">
-                                  <div className="flex items-center justify-between">
-                                    <div>
-                                      <div className="text-[13px] font-medium text-gray-900">
-                                        {testimonial.company}
-                                      </div>
-                                      <div className="text-[11px] text-gray-500 mt-0.5">
-                                        {testimonial.jobTitle || 'Head of Enterprise Sales'}
-                                      </div>
+                  {loadedImages.has(logo) && (
+                    <Popover.Portal>
+                      <Popover.Content
+                        className="w-[320px] bg-white shadow-lg rounded-lg animate-email-pop z-[9999] fixed
+                                 origin-[center_bottom]"
+                        sideOffset={5}
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => {
+                          setOpenPopover(null);
+                          setIsPaused(false);
+                        }}
+                      >
+                        <div className="overflow-hidden rounded-lg ring-1 ring-gray-100">
+                          <div className="px-4 py-2 bg-white">
+                            <div className="flex items-center justify-between">
+                              <h3 className="text-[14px] font-medium text-gray-900">
+                                {testimonials[idx % testimonials.length].subject}
+                              </h3>
+                              <span className="text-xs px-2 py-1 bg-green-50 text-green-600 rounded">
+                                ✓ Booked
+                              </span>
+                            </div>
+                            <div className="mt-1 text-[13px] text-gray-500">
+                              To: <span className="text-gray-800">*****@youragency.com</span>
+                            </div>
+                          </div>
+
+                          <div className="px-4 py-3 bg-white">
+                            <p className="text-[13px] text-gray-600 leading-relaxed">
+                              {testimonials[idx % testimonials.length].message}
+                            </p>
+                            
+                            <div className="mt-4 pt-3 border-t border-gray-100">
+                              <div className="flex flex-col gap-1">
+                                <div className="flex items-center justify-between">
+                                  <div>
+                                    <div className="text-[13px] font-medium text-gray-900">
+                                      {testimonials[idx % testimonials.length].company}
                                     </div>
-                                    <div className="text-[13px] font-medium text-blue-600">
-                                      {testimonial.revenue}
+                                    <div className="text-[11px] text-gray-500 mt-0.5">
+                                      Head of Enterprise Sales
                                     </div>
+                                  </div>
+                                  <div className="text-[13px] font-medium text-blue-600">
+                                    {testimonials[idx % testimonials.length].revenue}
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </Popover.Content>
-                      </Popover.Portal>
-                    )}
-                  </Popover.Root>
-                </div>
-              );
-            })}
+                        </div>
+                      </Popover.Content>
+                    </Popover.Portal>
+                  )}
+                </Popover.Root>
+              </div>
+            ))}
           </div>
         </div>
       </div>
