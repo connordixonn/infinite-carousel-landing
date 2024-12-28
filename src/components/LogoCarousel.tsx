@@ -18,7 +18,7 @@ export const LogoCarousel = () => {
     <div className="py-16 relative" role="region" aria-label="Logo Carousel">
       <div className="max-w-[100vw] mx-auto px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">
-          TRUSTED BY INDUSTRY LEADERS
+          WE BRING YOU WHALES
         </h2>
         <div className="relative w-full overflow-hidden">
           <div 
