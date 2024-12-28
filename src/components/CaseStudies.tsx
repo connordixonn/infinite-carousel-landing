@@ -25,11 +25,7 @@ const caseStudies = [
 
 export const CaseStudies = () => {
   return (
-    <div className="py-32 relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
-      <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      
+    <div className="py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 mb-16">
           Real Results, Real Growth

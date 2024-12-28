@@ -39,11 +39,7 @@ export const Features = ({
   description 
 }: FeaturesProps) => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-sky-50">
-      <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      
+    <section className="relative py-24 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-4">

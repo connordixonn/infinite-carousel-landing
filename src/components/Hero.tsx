@@ -2,12 +2,7 @@ import { Button } from "./ui/button";
 
 export const Hero = () => {
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-sky-50">
-      <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
-      <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-        <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#33C3F0] to-[#1EAEDB] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
-      </div>
-      
+    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
           <div className="space-y-4 sm:space-y-6">
