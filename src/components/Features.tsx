@@ -6,22 +6,22 @@ const features = [
     title: "Increase ACV & LTV",
     description: "Boost your Average Contract Value and Lifetime Value with our targeted strategies.",
     icon: DollarSign,
-    gradient: "from-violet-500/20 to-indigo-400/20",
-    iconColor: "text-violet-500",
+    gradient: "from-sky-500/20 to-blue-400/20",
+    iconColor: "text-sky-500",
   },
   {
     title: "Enterprise Acquisition",
     description: "Attract and convert Fortune 1000 companies with our proven methodologies.",
     icon: Building2,
-    gradient: "from-indigo-500/20 to-violet-400/20",
-    iconColor: "text-indigo-500",
+    gradient: "from-blue-500/20 to-sky-400/20",
+    iconColor: "text-blue-500",
   },
   {
     title: "Optimize Growth",
     description: "Implement cutting-edge ABM and outbound techniques for sustainable growth.",
     icon: TrendingUp,
-    gradient: "from-violet-500/20 to-indigo-400/20",
-    iconColor: "text-violet-500",
+    gradient: "from-sky-500/20 to-blue-400/20",
+    iconColor: "text-sky-500",
   },
 ];
 
@@ -34,15 +34,15 @@ interface FeaturesProps {
 
 export const Features = ({ 
   variant = 'primary',
-  title = "How We Help You Scale",
+  title = "How We Help You Scale", 
   subtitle,
   description 
 }: FeaturesProps) => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-slate-50">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-sky-50">
       <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute -top-24 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
@@ -55,7 +55,7 @@ export const Features = ({
           {description && (
             <p className="text-slate-500">{description}</p>
           )}
-          <div className="w-24 h-1 bg-violet-500 mx-auto rounded-full mt-6" />
+          <div className="w-24 h-1 bg-sky-500 mx-auto rounded-full mt-6" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

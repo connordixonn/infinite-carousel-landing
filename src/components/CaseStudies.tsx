@@ -27,8 +27,8 @@ export const CaseStudies = () => {
   return (
     <div className="py-32 relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
       <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute -top-24 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900 mb-16">
@@ -45,7 +45,7 @@ export const CaseStudies = () => {
                   {study.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm font-medium"
                     >
                       {tag}
                     </span>
@@ -61,8 +61,8 @@ export const CaseStudies = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {study.stats.map((stat) => (
-                    <div key={stat.label} className="text-center p-4 rounded-lg bg-violet-50">
-                      <div className="text-2xl font-bold text-violet-600">
+                    <div key={stat.label} className="text-center p-4 rounded-lg bg-sky-50">
+                      <div className="text-2xl font-bold text-sky-600">
                         {stat.value}
                       </div>
                       <div className="text-sm text-slate-600">{stat.label}</div>
@@ -74,7 +74,7 @@ export const CaseStudies = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-          <Button className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg">
+          <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg">
             Book a Call
           </Button>
           <p className="mt-4 text-sm text-slate-600">
