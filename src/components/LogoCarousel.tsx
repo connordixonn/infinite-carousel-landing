@@ -31,6 +31,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Yamaha",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$16.8B ARR"
   },
   {
@@ -38,6 +39,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Fossil Group",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.68B ARR"
   },
   {
@@ -45,6 +47,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "PGW Auto Glass",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$500M ARR"
   },
   {
@@ -52,6 +55,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "HP",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$63.0B ARR"
   },
   {
@@ -59,6 +63,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Reckitt",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$14.5B ARR"
   },
   {
@@ -66,6 +71,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Oregon Tool",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$750M ARR"
   },
   {
@@ -73,6 +79,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Wacom",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.1B ARR"
   },
   {
@@ -80,6 +87,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "LG",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$51.4B ARR"
   },
   {
@@ -87,6 +95,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Verizon",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$136.8B ARR"
   },
   {
@@ -94,6 +103,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Happy Dad",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$100M ARR"
   },
   {
@@ -101,6 +111,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Under Armour",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$5.7B ARR"
   },
   {
@@ -108,6 +119,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Miele",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$5.2B ARR"
   },
   {
@@ -115,6 +127,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Siemens",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$75.8B ARR"
   },
   {
@@ -122,6 +135,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Brown and Caldwell",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$500M ARR"
   },
   {
@@ -129,6 +143,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Stanley Black & Decker",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$16.9B ARR"
   },
   {
@@ -136,6 +151,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Rain Bird",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$750M ARR"
   },
   {
@@ -143,6 +159,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Samsung",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$244.2B ARR"
   },
   {
@@ -150,6 +167,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Hayward",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$1.3B ARR"
   },
   {
@@ -157,6 +175,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Nulo Pet Food",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$200M ARR"
   },
   {
@@ -164,6 +183,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "Jost Chemical",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$100M ARR"
   },
   {
@@ -171,6 +191,7 @@ const testimonials = [
     subject: "Re: Enterprise Sales Growth",
     message: "Your enterprise sales strategy has transformed our B2B division. We've seen a 200% increase in corporate partnerships within six months.",
     company: "UKG",
+    jobTitle: "Head of Enterprise Sales",
     revenue: "$3.3B ARR"
   }
 ];
@@ -247,8 +268,8 @@ export const LogoCarousel = () => {
                           setIsPaused(false);
                         }}
                       >
-                        <div className="overflow-hidden rounded-lg ring-1 ring-gray-100">
-                          <div className="px-4 py-2 bg-white">
+                        <div className="overflow-hidden rounded-lg">
+                          <div className="px-4 py-2 bg-white border-b border-gray-100">
                             <div className="flex items-center justify-between">
                               <h3 className="text-[14px] font-medium text-gray-900">
                                 {testimonials[idx % testimonials.length].subject}
@@ -275,7 +296,7 @@ export const LogoCarousel = () => {
                                       {testimonials[idx % testimonials.length].company}
                                     </div>
                                     <div className="text-[11px] text-gray-500 mt-0.5">
-                                      Head of Enterprise Sales
+                                      {testimonials[idx % testimonials.length].jobTitle}
                                     </div>
                                   </div>
                                   <div className="text-[13px] font-medium text-blue-600">
