@@ -23,42 +23,44 @@ export default {
         cabinet: ['Cabinet Grotesk', 'sans-serif'],
       },
       colors: {
-        border: {
-          DEFAULT: "hsl(var(--border))",
-        },
-        background: {
-          DEFAULT: "hsl(var(--background))",
-        },
-        foreground: {
-          DEFAULT: "hsl(var(--foreground))",
-        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0EA5E9",
-          light: "#BAE6FD",
-          dark: "#075985",
+          DEFAULT: "#3B82F6",
+          foreground: "#FFFFFF",
         },
         secondary: {
           DEFAULT: "#6366F1",
-          light: "#E0E7FF",
-          dark: "#4338CA",
+          foreground: "#FFFFFF",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#F43F5E",
-          light: "#FFE4E6",
-          dark: "#BE123C",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
-        neutral: {
-          50: "#FAFAFA",
-          100: "#F4F4F5",
-          200: "#E4E4E7",
-          300: "#D4D4D8",
-          400: "#A1A1AA",
-          500: "#71717A",
-          600: "#52525B",
-          700: "#3F3F46",
-          800: "#27272A",
-          900: "#18181B",
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
@@ -86,7 +88,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-enterprise': 'linear-gradient(to right, #075985 0%, #0EA5E9 100%)',
+        'gradient-enterprise': 'linear-gradient(to right, #1E40AF 0%, #3B82F6 100%)',
       },
     },
   },
