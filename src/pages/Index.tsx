@@ -5,18 +5,16 @@ import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <div>
-        <Hero />
-        <LogoCarousel />
-        <Features 
-          title="Transform Your Enterprise Sales" 
-          subtitle="Enterprise Solutions"
-          description="Unlock new levels of growth with our enterprise-focused approach"
-          variant="primary"
-        />
-        <CaseStudies />
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Hero />
+      <LogoCarousel />
+      <Features 
+        title="How We Help You Scale" 
+        subtitle="Enterprise Growth Solutions"
+        description="Unlock your business potential with our proven strategies"
+        variant="primary"
+      />
+      <CaseStudies />
     </div>
   );
 };

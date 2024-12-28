@@ -6,22 +6,22 @@ const features = [
     title: "Increase ACV & LTV",
     description: "Boost your Average Contract Value and Lifetime Value with our targeted strategies.",
     icon: DollarSign,
-    gradient: "from-blue-500/20 to-cyan-400/20",
-    iconColor: "text-blue-500",
-  },
-  {
-    title: "Bring in Enterprise Customers",
-    description: "Attract and convert Fortune 1000 companies with our proven methodologies.",
-    icon: Building2,
-    gradient: "from-violet-500/20 to-purple-400/20",
+    gradient: "from-violet-500/20 to-indigo-400/20",
     iconColor: "text-violet-500",
   },
   {
-    title: "Optimize Growth Strategies",
+    title: "Enterprise Acquisition",
+    description: "Attract and convert Fortune 1000 companies with our proven methodologies.",
+    icon: Building2,
+    gradient: "from-indigo-500/20 to-violet-400/20",
+    iconColor: "text-indigo-500",
+  },
+  {
+    title: "Optimize Growth",
     description: "Implement cutting-edge ABM and outbound techniques for sustainable growth.",
     icon: TrendingUp,
-    gradient: "from-pink-500/20 to-rose-400/20",
-    iconColor: "text-pink-500",
+    gradient: "from-violet-500/20 to-indigo-400/20",
+    iconColor: "text-violet-500",
   },
 ];
 
@@ -34,40 +34,39 @@ interface FeaturesProps {
 
 export const Features = ({ 
   variant = 'primary',
-  title = "How We Help You Grow",
+  title = "How We Help You Scale",
   subtitle,
   description 
 }: FeaturesProps) => {
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-grid-slate-100/[0.03] bg-[size:40px] dark:bg-grid-slate-700/[0.03]" />
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-slate-50">
+      <div className="absolute inset-0 bg-grid-slate-200/[0.1] bg-[size:20px]" />
+      <div className="absolute -top-24 right-0 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-4">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-xl text-gray-600 mb-4">{subtitle}</p>
+            <p className="text-xl text-slate-600 mb-4">{subtitle}</p>
           )}
           {description && (
-            <p className="text-gray-500">{description}</p>
+            <p className="text-slate-500">{description}</p>
           )}
-          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mt-6" />
+          <div className="w-24 h-1 bg-violet-500 mx-auto rounded-full mt-6" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
               className={cn(
-                "group relative bg-white dark:bg-gray-900 rounded-2xl p-8",
+                "group relative bg-white rounded-2xl p-8",
                 "transition-all duration-300 hover:scale-105",
-                "border border-gray-200 dark:border-gray-800",
-                "shadow-[0_1px_3px_rgba(0,0,0,0.1)] hover:shadow-xl"
+                "border border-slate-200",
+                "shadow-lg hover:shadow-xl"
               )}
             >
               <div className={cn(
@@ -79,17 +78,17 @@ export const Features = ({
               <div className="relative">
                 <div className={cn(
                   "w-12 h-12 rounded-xl mb-6 flex items-center justify-center",
-                  "bg-gray-50 dark:bg-gray-800",
+                  "bg-slate-50",
                   "group-hover:scale-110 transition-transform"
                 )}>
                   <feature.icon className={cn("w-6 h-6", feature.iconColor)} />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   {feature.title}
                 </h3>
                 
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
