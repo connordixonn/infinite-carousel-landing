@@ -6,22 +6,22 @@ const features = [
     title: "Increase ACV & LTV",
     description: "Boost your Average Contract Value and Lifetime Value with our targeted strategies.",
     icon: DollarSign,
-    gradient: "from-sky-500/20 to-blue-400/20",
-    iconColor: "text-sky-500",
+    gradient: "from-primary/20 to-secondary/20",
+    iconColor: "text-primary",
   },
   {
     title: "Enterprise Acquisition",
     description: "Attract and convert Fortune 1000 companies with our proven methodologies.",
     icon: Building2,
-    gradient: "from-blue-500/20 to-sky-400/20",
-    iconColor: "text-blue-500",
+    gradient: "from-secondary/20 to-primary/20",
+    iconColor: "text-primary",
   },
   {
     title: "Optimize Growth",
     description: "Implement cutting-edge ABM and outbound techniques for sustainable growth.",
     icon: TrendingUp,
-    gradient: "from-sky-500/20 to-blue-400/20",
-    iconColor: "text-sky-500",
+    gradient: "from-primary/20 to-secondary/20",
+    iconColor: "text-primary",
   },
 ];
 
@@ -39,10 +39,11 @@ export const Features = ({
   description 
 }: FeaturesProps) => {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      <div className="absolute inset-0 bg-grid-slate-200/[0.07] bg-[size:20px]" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-4">
+        <div className="text-center mb-20 animate-fade-up">
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-4 font-cabinet">
             {title}
           </h2>
           {subtitle && (
@@ -51,19 +52,20 @@ export const Features = ({
           {description && (
             <p className="text-slate-500">{description}</p>
           )}
-          <div className="w-24 h-1 bg-sky-500 mx-auto rounded-full mt-6" />
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature) => (
+          {features.map((feature, index) => (
             <div
               key={feature.title}
               className={cn(
                 "group relative bg-white rounded-2xl p-8",
                 "transition-all duration-300 hover:scale-105",
-                "border border-slate-200",
+                "border border-slate-200/50",
                 "shadow-lg hover:shadow-xl"
               )}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={cn(
                 "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity",
