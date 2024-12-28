@@ -20,7 +20,7 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="py-32 relative overflow-hidden bg-[#1a1f36] text-white">
+    <div className="py-32 relative overflow-hidden bg-[#1a1f36]">
       <div className="absolute inset-y-0 right-0 w-1/2 bg-[#60A5FA]/5 blur-3xl transform rotate-12"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="text-center mb-20">
@@ -35,16 +35,16 @@ export const Features = () => {
           {features.map((feature) => (
             <div 
               key={feature.title} 
-              className="relative p-8 bg-[#252b45] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800"
+              className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="absolute -top-4 -left-4 p-3 bg-[#60A5FA] rounded-xl shadow-lg">
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
               <div className="pt-4">
-                <h3 className="text-xl font-semibold mb-4 text-white">
+                <h3 className="text-xl font-semibold mb-4 text-[#1a1f36]">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300">{feature.description}</p>
+                <p className="text-[#374151]">{feature.description}</p>
               </div>
             </div>
           ))}
