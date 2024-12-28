@@ -9,20 +9,12 @@ const Index = () => {
       <div>
         <Hero />
         <LogoCarousel />
-        <div className="flex flex-col">
-          <Features 
-            title="Transform Your Enterprise Sales" 
-            subtitle="Enterprise Solutions"
-            description="Unlock new levels of growth with our enterprise-focused approach"
-            variant="primary"
-          />
-          <Features 
-            title="Innovate & Grow" 
-            subtitle="Creative Solutions"
-            description="Embrace the future with our innovative approach to business growth"
-            variant="secondary"
-          />
-        </div>
+        <Features 
+          title="Transform Your Enterprise Sales" 
+          subtitle="Enterprise Solutions"
+          description="Unlock new levels of growth with our enterprise-focused approach"
+          variant="primary"
+        />
         <CaseStudies />
       </div>
     </div>
