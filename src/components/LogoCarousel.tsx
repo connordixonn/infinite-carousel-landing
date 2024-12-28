@@ -217,7 +217,7 @@ export const LogoCarousel = () => {
                 <Popover.Root open={openPopover === idx}>
                   <Popover.Trigger className="relative z-10 flex items-center outline-none group cursor-pointer">
                     <div 
-                      className="relative h-[80px] w-[160px] flex items-center justify-center"
+                      className="relative h-[40px] w-[120px] flex items-center justify-center"
                       style={{ zIndex: openPopover === idx ? 20 : 10 }}
                     >
                       {!loadedImages.has(logo) && (
@@ -226,10 +226,9 @@ export const LogoCarousel = () => {
                       <img
                         src={logo}
                         alt={`${testimonials[idx % testimonials.length].company} logo`}
-                        className={`h-[80px] w-auto object-contain transition-all duration-300 transform
+                        className={`h-auto w-auto max-h-[40px] max-w-[120px] object-contain transition-all duration-300 transform
                                   ${openPopover === idx ? 'scale-110 grayscale-0' : 'grayscale hover:grayscale-0 group-hover:scale-110'}
                                   ${loadedImages.has(logo) ? 'opacity-100' : 'opacity-0'}`}
-                        style={{ maxWidth: 'none' }}
                         onLoad={() => handleImageLoad(logo)}
                         loading="eager"
                       />
