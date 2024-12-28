@@ -24,7 +24,7 @@ export const Features = () => {
       <div className="absolute inset-y-0 right-0 w-1/2 bg-[#60A5FA]/5 blur-3xl transform rotate-12"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Transform Your Enterprise Sales
           </h2>
           <p className="mt-4 text-lg text-gray-300">
@@ -41,7 +41,7 @@ export const Features = () => {
                 <feature.icon className="h-6 w-6 text-white" />
               </div>
               <div className="pt-4">
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="text-xl font-semibold mb-4 text-white">
                   {feature.title}
                 </h3>
                 <p className="text-gray-300">{feature.description}</p>
