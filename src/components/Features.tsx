@@ -18,24 +18,30 @@ const features = [
   },
 ];
 
-export const Features = () => {
+interface FeaturesProps {
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export const Features = ({ title, subtitle, description }: FeaturesProps) => {
   return (
-    <div className="py-24 bg-white relative overflow-hidden">
+    <div className="py-12 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white to-[#F6F6F7]"></div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div className="relative">
         <div className="text-center mb-16">
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-[#1EAEDB]/10 text-[#1EAEDB]">
-            Enterprise Solutions
+            {subtitle}
           </span>
-          <h2 className="mt-6 text-4xl sm:text-5xl font-bold text-[#222222] tracking-tight">
-            Transform Your Enterprise Sales
+          <h2 className="mt-6 text-4xl font-bold text-[#222222] tracking-tight">
+            {title}
           </h2>
           <p className="mt-4 text-lg text-[#555555] max-w-2xl mx-auto">
-            Unlock new levels of growth with our enterprise-focused approach
+            {description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8">
           {features.map((feature) => (
             <div 
               key={feature.title}
