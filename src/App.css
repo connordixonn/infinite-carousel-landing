@@ -44,7 +44,7 @@
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 60s linear infinite;
+  animation: marquee 20s linear infinite;
   will-change: transform;
 }
 
@@ -58,7 +58,7 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
@@ -99,4 +99,21 @@
 
 .font-cabinet-grotesk {
   font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.animate-email-pop {
+  animation: email-pop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  transform-origin: center bottom;
+}
+
+@keyframes email-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
