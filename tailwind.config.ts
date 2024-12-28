@@ -30,33 +30,33 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#0EA5E9", // Ocean Blue - Use sparingly for attention
-          light: "#D3E4FD",   // Soft Blue - For backgrounds and subtle elements
-          dark: "#0369A1",    // Deep Blue - For hover states and emphasis
+          light: "#BAE6FD",   // Soft Sky Blue - For subtle highlights
+          dark: "#075985",    // Deep Ocean - For depth and emphasis
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#8E9196", // Neutral Gray - For balance and sophistication
-          light: "#F1F5F9",   // Light Gray - For backgrounds
-          dark: "#403E43",    // Charcoal Gray - For text and dark sections
+          DEFAULT: "#6366F1", // Indigo - For secondary actions
+          light: "#E0E7FF",   // Soft Indigo - For backgrounds
+          dark: "#4338CA",    // Deep Indigo - For contrast
           foreground: "hsl(var(--secondary-foreground))",
         },
         accent: {
-          DEFAULT: "#1EAEDB", // Bright Blue - For interactive elements
-          light: "#7DD3FC",   // Sky Blue - For highlights
-          dark: "#0C4A6E",    // Navy Blue - For depth
+          DEFAULT: "#F43F5E", // Rose - For important highlights
+          light: "#FFE4E6",   // Soft Rose - For subtle accents
+          dark: "#BE123C",    // Deep Rose - For emphasis
           foreground: "hsl(var(--accent-foreground))",
         },
         neutral: {
-          50: "#F8FAFC",
-          100: "#F1F5F9",
-          200: "#E2E8F0",
-          300: "#CBD5E1",
-          400: "#94A3B8",
-          500: "#64748B",
-          600: "#475569",
-          700: "#334155",
-          800: "#1E293B",
-          900: "#0F172A",
+          50: "#FAFAFA",
+          100: "#F4F4F5",
+          200: "#E4E4E7",
+          300: "#D4D4D8",
+          400: "#A1A1AA",
+          500: "#71717A",
+          600: "#52525B",
+          700: "#3F3F46",
+          800: "#27272A",
+          900: "#18181B",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -101,7 +101,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-enterprise': 'linear-gradient(to right, #243949 0%, #517fa4 100%)',
+        'gradient-enterprise': 'linear-gradient(to right, #075985 0%, #0EA5E9 100%)',
       },
     },
   },
