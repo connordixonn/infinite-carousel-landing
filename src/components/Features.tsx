@@ -20,11 +20,16 @@ const features = [
 
 interface FeaturesProps {
   title?: string;
+  subtitle?: string;
   description?: string;
   variant?: 'primary' | 'secondary';
 }
 
-export const Features = ({ title = "How We Help You Grow" }: FeaturesProps) => {
+export const Features = ({ 
+  title = "How We Help You Grow",
+  subtitle,
+  description 
+}: FeaturesProps) => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="space-y-12">
@@ -32,6 +37,16 @@ export const Features = ({ title = "How We Help You Grow" }: FeaturesProps) => {
           <h2 className="text-3xl font-semibold text-gray-900">
             {title}
           </h2>
+          {subtitle && (
+            <h3 className="mt-2 text-xl text-gray-600">
+              {subtitle}
+            </h3>
+          )}
+          {description && (
+            <p className="mt-4 text-gray-500">
+              {description}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
