@@ -30,68 +30,62 @@ interface FeaturesProps {
 
 export const Features = ({ title, subtitle, description }: FeaturesProps) => {
   return (
-    <div className="relative py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[#1A1F2C] bg-opacity-95">
+    <div className="relative py-24 overflow-hidden">
+      {/* Background Pattern - More subtle */}
+      <div className="absolute inset-0 bg-gray-50">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(14, 165, 233, 0.15) 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(14, 165, 233, 0.08) 1px, transparent 0)',
           backgroundSize: '40px 40px'
         }}></div>
       </div>
 
-      {/* Floating Orbs */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#0EA5E9]/30 to-[#33C3F0]/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#1EAEDB]/30 to-[#0FA0CE]/30 rounded-full blur-3xl animate-pulse delay-700"></div>
+      {/* Floating Orbs - More subtle */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#0EA5E9]/10 to-[#33C3F0]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#1EAEDB]/10 to-[#0FA0CE]/10 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-24 space-y-8">
-          <h2 className="text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-[#0EA5E9] to-white">
+        {/* Header Section - Reduced prominence */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <h2 className="text-4xl font-semibold text-gray-900">
             {title}
           </h2>
-          <p className="text-xl leading-8 text-[#D3E4FD]/80">
+          <p className="text-lg leading-7 text-gray-600">
             {description}
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
               className="group relative"
             >
-              {/* Feature Card */}
-              <div className="relative h-full rounded-3xl bg-white/5 backdrop-blur-xl p-8 transition-all duration-500 
-                hover:translate-y-[-8px] hover:scale-[1.02]
-                border border-[#0EA5E9]/10 hover:border-[#0EA5E9]/20">
+              {/* Feature Card - More subtle */}
+              <div className="relative h-full rounded-2xl bg-white p-6 transition-all duration-300 
+                hover:translate-y-[-4px] hover:shadow-lg
+                border border-gray-100">
                 
                 {/* Icon */}
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.gradient}
-                  shadow-lg mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient}/10
+                  mb-4 group-hover:scale-105 transition-all duration-300`}>
+                  <feature.icon className="w-5 h-5 text-[#0EA5E9]" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4 
-                  group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#0EA5E9] 
-                  group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-[#D3E4FD]/80 leading-relaxed text-lg">
+                <p className="text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
 
                 {/* Hover Arrow */}
-                <div className="absolute top-8 right-8 transition-all duration-500 
-                  opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0">
-                  <ArrowUpRight className="w-5 h-5 text-[#0EA5E9]" />
+                <div className="absolute top-6 right-6 transition-all duration-300 
+                  opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+                  <ArrowUpRight className="w-4 h-4 text-[#0EA5E9]" />
                 </div>
               </div>
-
-              {/* Card Glow Effect */}
-              <div className="absolute -inset-px bg-gradient-to-r from-[#0EA5E9]/0 via-[#0EA5E9]/20 to-[#33C3F0]/0 
-                rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 -z-10" />
             </div>
           ))}
         </div>
