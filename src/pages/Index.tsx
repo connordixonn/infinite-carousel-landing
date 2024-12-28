@@ -9,7 +9,7 @@ const Index = () => {
       <div>
         <Hero />
         <LogoCarousel />
-        <div className="flex flex-col gap-8 px-4">
+        <div className="flex flex-col">
           <Features 
             title="Transform Your Enterprise Sales" 
             subtitle="Enterprise Solutions"
@@ -17,9 +17,9 @@ const Index = () => {
             variant="primary"
           />
           <Features 
-            title="Scale Your Business" 
-            subtitle="Growth Solutions"
-            description="Take your business to the next level with our proven strategies"
+            title="Innovate & Grow" 
+            subtitle="Creative Solutions"
+            description="Embrace the future with our innovative approach to business growth"
             variant="secondary"
           />
         </div>
