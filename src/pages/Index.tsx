@@ -5,25 +5,22 @@ import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Main background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/10 to-white" />
-      
+    <div className="relative min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       {/* Subtle grid overlay */}
       <div className="absolute inset-0 bg-grid-slate-200/[0.07] bg-[size:20px]" />
       
       {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl" />
       
       {/* Content */}
       <div className="relative">
         <Hero />
         <LogoCarousel />
         <Features 
-          title="How We Help You Scale" 
-          subtitle="Enterprise Growth Solutions"
-          description="Unlock your business potential with our proven strategies"
+          title="Enterprise Solutions" 
+          subtitle="Powerful Features for Growing Businesses"
+          description="Scale your operations with our enterprise-grade tools and solutions"
           variant="primary"
         />
         <CaseStudies />

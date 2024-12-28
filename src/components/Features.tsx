@@ -1,27 +1,30 @@
-import { DollarSign, Building2, TrendingUp } from "lucide-react";
+import { DollarSign, Building2, TrendingUp, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
   {
-    title: "Increase ACV & LTV",
-    description: "Boost your Average Contract Value and Lifetime Value with our targeted strategies.",
+    title: "Enterprise Revenue Growth",
+    description: "Maximize your revenue potential with our advanced analytics and targeting strategies.",
     icon: DollarSign,
     gradient: "from-sky-500/20 to-blue-400/20",
     iconColor: "text-sky-500",
+    benefits: ["Revenue optimization", "Market expansion", "Profit maximization"]
   },
   {
-    title: "Enterprise Acquisition",
-    description: "Attract and convert Fortune 1000 companies with our proven methodologies.",
+    title: "Fortune 500 Acquisition",
+    description: "Target and convert Fortune 500 companies with our proven enterprise methodologies.",
     icon: Building2,
     gradient: "from-blue-500/20 to-sky-400/20",
     iconColor: "text-blue-500",
+    benefits: ["Strategic targeting", "Enterprise pipeline", "Key account management"]
   },
   {
-    title: "Optimize Growth",
-    description: "Implement cutting-edge ABM and outbound techniques for sustainable growth.",
+    title: "Sustainable Growth",
+    description: "Implement cutting-edge strategies for long-term, sustainable business growth.",
     icon: TrendingUp,
     gradient: "from-sky-500/20 to-blue-400/20",
     iconColor: "text-sky-500",
+    benefits: ["Scalable solutions", "Growth automation", "Performance metrics"]
   },
 ];
 
@@ -34,7 +37,7 @@ interface FeaturesProps {
 
 export const Features = ({ 
   variant = 'primary',
-  title = "How We Help You Scale", 
+  title = "Enterprise Solutions", 
   subtitle,
   description 
 }: FeaturesProps) => {
@@ -84,9 +87,18 @@ export const Features = ({
                   {feature.title}
                 </h3>
                 
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed mb-6">
                   {feature.description}
                 </p>
+
+                <ul className="space-y-2">
+                  {feature.benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-2 text-sm text-slate-600">
+                      <CheckCircle2 className="w-4 h-4 text-sky-500" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
