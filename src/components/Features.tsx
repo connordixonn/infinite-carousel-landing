@@ -46,9 +46,6 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-24 space-y-8">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-gradient-to-r from-[#0EA5E9]/10 to-[#33C3F0]/10 text-[#D3E4FD] ring-1 ring-[#0EA5E9]/20">
-            {subtitle}
-          </span>
           <h2 className="text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-[#0EA5E9] to-white">
             {title}
           </h2>
