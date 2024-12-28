@@ -27,45 +27,51 @@ interface FeaturesProps {
 
 export const Features = ({ title, subtitle, description }: FeaturesProps) => {
   return (
-    <div className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#F6F6F7]" />
-      <div 
-        className="absolute inset-0 opacity-60"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(96,165,250,0.07)'/%3E%3C/svg%3E")`
-        }}
-      />
+    <div className="py-24 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F6F6F7] to-white" />
+      <div className="absolute right-0 top-0 w-1/2 h-1/2 bg-[#60A5FA]/5 blur-[120px] rounded-full" />
+      <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-[#93C5FD]/5 blur-[120px] rounded-full" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Header Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-[#60A5FA]/10 text-[#60A5FA] mb-6">
+          <div 
+            className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-gradient-to-r from-[#60A5FA]/10 to-[#93C5FD]/10 text-[#60A5FA] mb-6 border border-[#60A5FA]/20"
+          >
             {subtitle}
           </div>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
             {title}
           </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
         </div>
 
+        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={feature.title}
-              className="group relative rounded-2xl p-8 hover:scale-105 transition-all duration-300"
+              className="group relative rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
             >
-              <div className="absolute inset-0 rounded-2xl bg-white shadow-lg ring-1 ring-gray-200/50 group-hover:ring-[#60A5FA]/30 transition-all duration-300" />
+              {/* Card Background */}
+              <div className="absolute inset-0 rounded-2xl bg-white shadow-[0_4px_20px_-4px_rgba(96,165,250,0.1)] ring-1 ring-gray-200/50 transition-all duration-500 group-hover:shadow-[0_8px_30px_-4px_rgba(96,165,250,0.2)] group-hover:ring-[#60A5FA]/30" />
               
               <div className="relative">
+                {/* Icon and Arrow Section */}
                 <div className="flex items-center justify-between mb-8">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-[#60A5FA] to-[#93C5FD] shadow-md group-hover:shadow-lg transition-all duration-300">
+                  <div className="p-3.5 rounded-xl bg-gradient-to-br from-[#60A5FA] to-[#93C5FD] shadow-md transition-all duration-500 group-hover:shadow-lg group-hover:scale-110">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
-                  <ArrowUpRight className="h-5 w-5 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-[#60A5FA]" />
+                  <ArrowUpRight 
+                    className="h-5 w-5 opacity-0 transform translate-x-2 transition-all duration-500 text-[#60A5FA] group-hover:opacity-100 group-hover:translate-x-0" 
+                  />
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#60A5FA] transition-colors duration-300">
+                {/* Content */}
+                <h3 className="text-xl font-semibold mb-4 text-gray-900 transition-colors duration-500 group-hover:text-[#60A5FA]">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
