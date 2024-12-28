@@ -1,4 +1,5 @@
 import { Button } from "./ui/button";
+import { ChevronRight, Building2, Globe } from "lucide-react";
 
 export const Hero = () => {
   return (
