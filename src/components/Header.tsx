@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-slate-900/80 backdrop-blur-md z-[1000] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-[1000] border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -23,16 +23,16 @@ export const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            <Button variant="ghost" className="text-gray-300 hover:text-white" asChild>
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900" asChild>
               <Link to="/features">Features</Link>
             </Button>
-            <Button variant="ghost" className="text-gray-300 hover:text-white" asChild>
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900" asChild>
               <Link to="/case-studies">Case Studies</Link>
             </Button>
-            <Button variant="ghost" className="text-gray-300 hover:text-white" asChild>
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900" asChild>
               <Link to="/about">About</Link>
             </Button>
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white" asChild>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
               <Link to="/get-started">Get Started</Link>
             </Button>
           </div>
