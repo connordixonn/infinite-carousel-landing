@@ -6,40 +6,14 @@ export const Hero = () => {
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        {/* Primary background with noise texture */}
-        <div className="absolute inset-0 bg-gradient-to-br from-theme-white via-theme-blue/5 to-theme-tan/10">
-          {/* Noise overlay */}
-          <div 
-            className="absolute inset-0 opacity-50"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-              filter: 'contrast(200%) brightness(150%)',
-            }}
-          />
-        </div>
-
-        {/* Diagonal stripes */}
-        <div className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: `linear-gradient(45deg, 
-              ${encodeURIComponent('#000')} 25%, 
-              transparent 25%, 
-              transparent 75%, 
-              ${encodeURIComponent('#000')} 75%, 
-              ${encodeURIComponent('#000')})`,
-            backgroundSize: '60px 60px',
-            backgroundPosition: '0 0, 30px 30px'
-          }}
-        />
-
-        {/* Accent elements */}
+        {/* Simple gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-theme-white via-theme-white to-theme-blue/5"></div>
+        
+        {/* Minimal accent */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-theme-gold/5 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-theme-blue/5 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-theme-blue/5 rounded-full filter blur-[100px]"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-[500px] h-[500px] bg-theme-gold/5 rounded-full filter blur-[100px]"></div>
         </div>
-
-        {/* Subtle radial gradient overlay */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-theme-white/50 to-transparent opacity-30"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
