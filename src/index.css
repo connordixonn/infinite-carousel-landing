@@ -82,11 +82,15 @@
 }
 
 .glass-card {
-  @apply bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg rounded-xl;
+  @apply bg-white/95 backdrop-blur-md border border-white/20 shadow-lg rounded-xl;
 }
 
 .section-padding {
   @apply py-16 px-6 md:px-12 lg:px-24;
+}
+
+.section-bg {
+  @apply absolute inset-0 bg-gradient-to-b from-blue-50/80 via-white/50 to-white/80 backdrop-blur-sm;
 }
 
 .fade-in {
