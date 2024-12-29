@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, Timer, Rocket, Lightbulb, Puzzle } from "lucide-react";
+import { ArrowUpRight, Building2, Timer, Rocket } from "lucide-react";
 
 const features = [
   {
@@ -30,12 +30,12 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
     <div className="relative py-32 overflow-hidden bg-gradient-to-b from-theme-white via-theme-blue/5 to-theme-white">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#7EC8E320_1px,transparent_1px),linear-gradient(to_bottom,#7EC8E320_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div className="absolute right-0 top-0 -mt-24 transform translate-x-1/2">
-        <div className="w-96 h-96 bg-theme-blue opacity-20 rounded-full blur-3xl" />
+        <div className="w-96 h-96 bg-theme-primary opacity-20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-theme-blue/10 text-theme-navy">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-theme-primary/10 text-theme-navy">
             {subtitle}
           </span>
           <h2 className="mt-8 text-5xl font-bold tracking-tight text-theme-navy">
@@ -56,14 +56,14 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
                 transform hover:-translate-y-2 hover:scale-[1.01]
                 shadow-[0_4px_20px_-4px_rgba(126,200,227,0.1)]
                 hover:shadow-[0_20px_40px_-4px_rgba(126,200,227,0.15)]">
-                <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-theme-blue to-theme-slate 
+                <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-theme-primary to-theme-secondary 
                   shadow-md mb-6 group-hover:shadow-lg transition-all duration-500
                   group-hover:scale-110 group-hover:rotate-3">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
 
                 <h3 className="text-xl font-semibold text-theme-navy mb-4 
-                  group-hover:text-theme-blue transition-colors duration-500">
+                  group-hover:text-theme-primary transition-colors duration-500">
                   {feature.title}
                 </h3>
                 <p className="text-theme-slate leading-relaxed">
@@ -72,11 +72,11 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
 
                 <div className="absolute top-8 right-8 transition-all duration-500 
                   opacity-0 transform translate-x-4 group-hover:opacity-100 group-hover:translate-x-0">
-                  <ArrowUpRight className="w-5 h-5 text-theme-blue" />
+                  <ArrowUpRight className="w-5 h-5 text-theme-primary" />
                 </div>
               </div>
 
-              <div className="absolute inset-0 z-0 bg-gradient-to-r from-theme-blue/5 to-theme-slate/5 
+              <div className="absolute inset-0 z-0 bg-gradient-to-r from-theme-primary/5 to-theme-secondary/5 
                 rounded-3xl blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </div>
           ))}

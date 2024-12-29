@@ -99,17 +99,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Animation Styles */}
-      <style jsx>{`
-        @keyframes slide {
-          0% {
-            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      <style>
+        {`
+          @keyframes slide {
+            0% {
+              transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            100% {
+              transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
           }
-          100% {
-            transform: translateX(-50%) translateY(-50%) rotate(360deg);
-          }
-        }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
