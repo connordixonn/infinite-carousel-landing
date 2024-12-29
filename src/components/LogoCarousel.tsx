@@ -11,14 +11,13 @@ export const LogoCarousel = () => {
     setLoadedImages(prev => new Set(prev).add(logo));
   };
 
-  // Create three sets of logos for seamless scrolling
   const tripleLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="py-16 relative" role="region" aria-label="Logo Carousel">
+    <div className="py-24 relative bg-gradient-to-b from-theme-white via-theme-blue/5 to-theme-white" role="region" aria-label="Logo Carousel">
       <div className="max-w-[100vw] mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          WE BRING YOU WHALES
+        <h2 className="text-4xl font-bold text-center mb-16 text-theme-navy">
+          Trusted by Industry Leaders
         </h2>
         <div className="relative w-full overflow-hidden">
           <div 
@@ -31,7 +30,7 @@ export const LogoCarousel = () => {
               transform: 'translateX(0)',
               animation: 'scroll 90s linear infinite'
             }}
-            className="flex"
+            className="flex items-center"
           >
             {tripleLogos.map((logo, idx) => (
               <LogoItem

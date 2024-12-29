@@ -18,22 +18,29 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
       colors: {
+        'theme': {
+          navy: '#2F3E52',
+          tan: '#E5D7C7',
+          gray: '#EBEBEB',
+          slate: '#505F73',
+          gold: '#E8B860',
+          white: '#FAFAF9',
+          charcoal: '#3C3C3C',
+          blue: '#7EC8E3',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#3B82F6",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#7EC8E3",
+          foreground: "#FAFAF9",
         },
         secondary: {
-          DEFAULT: "#64748B",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#505F73",
+          foreground: "#FAFAF9",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -44,8 +51,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#E8B860",
+          foreground: "#2F3E52",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -55,6 +62,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
@@ -68,12 +78,17 @@ export default {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
-        }
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: 'marquee 30s linear infinite',
+        fadeIn: 'fadeIn 0.5s ease-out',
       },
     },
   },
