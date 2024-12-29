@@ -20,19 +20,22 @@ export default {
     extend: {
       colors: {
         'theme': {
-          navy: '#2F3E52',
-          tan: '#E5D7C7',
-          gray: '#EBEBEB',
-          slate: '#505F73',
-          gold: '#E8B860',
-          white: '#FAFAF9',
-          charcoal: '#3C3C3C',
-          blue: '#009fe3', // Updated to the requested blue color
+          primary: '#7EC8E3',    // Sky Blue - Primary brand color
+          secondary: '#90AEC5',  // Azure Mist - Secondary brand color
+          navy: '#212E4A',       // Medium Navy - Dark backgrounds
+          slate: '#5B6D8C',      // Twilight Blue - Subdued accents
+          warm: '#CDC6BE',       // Warm Stone - Subtle warm accent
+          sand: '#BBAF9F',       // Soft Taupe - Additional warm accent
+          white: '#F7F4EF',      // Eggshell White - Primary background
+          pearl: '#FDFBF6',      // Cream White - Secondary background
+          text: '#1F1F1F',       // Dark Text - Primary text color
+          muted: '#4C5C75',      // Frosted Indigo - Muted text
+          blue: '#009fe3',       // Keeping the existing blue as requested
         },
         'graph': {
-          bg: '#F8FAFC',
-          grid: '#F1F5F9',
-          hover: '#EFF6FF',
+          bg: '#F7F4EF',         // Updated to match theme
+          grid: '#ECEAF4',       // Subtle Lavender for grid
+          hover: '#F7F4EF',      // Eggshell White for hover
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -40,24 +43,24 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#009fe3", // Updated to match theme.blue
-          foreground: "#FAFAF9",
+          DEFAULT: "#009fe3",    // Keeping as requested
+          foreground: "#F7F4EF", // Updated to match theme
         },
         secondary: {
-          DEFAULT: "#505F73",
-          foreground: "#FAFAF9",
+          DEFAULT: "#90AEC5",    // Azure Mist
+          foreground: "#F7F4EF", // Eggshell White
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#ECEAF4",    // Subtle Lavender
+          foreground: "#4C5C75", // Frosted Indigo
         },
         accent: {
-          DEFAULT: "#E8B860",
-          foreground: "#2F3E52",
+          DEFAULT: "#CDC6BE",    // Warm Stone
+          foreground: "#212E4A", // Medium Navy
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -72,7 +75,7 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'graph-pattern': `radial-gradient(#F1F5F9 1px, transparent 1px)`,
+        'graph-pattern': `radial-gradient(#ECEAF4 1px, transparent 1px)`,
       },
       backgroundSize: {
         'graph-pattern': '24px 24px',
