@@ -4,26 +4,25 @@ import { ArrowRight, Play } from "lucide-react";
 export const Hero = () => {
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with original colors but new style */}
+      {/* Background */}
       <div className="absolute inset-0">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-theme-white via-theme-tan to-theme-gray">
-          {/* Animated gradient orbs */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -left-40 w-80 h-80 bg-theme-gold opacity-20 rounded-full blur-3xl animate-blob"></div>
-            <div className="absolute top-0 -right-40 w-80 h-80 bg-theme-blue opacity-20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-40 left-40 w-80 h-80 bg-theme-navy opacity-20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
-          </div>
+        {/* Primary gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-theme-white via-theme-blue/10 to-theme-tan/20">
+          {/* Animated wave patterns */}
+          <div className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+              backgroundSize: '100px auto',
+              animation: 'wave 15s linear infinite',
+            }}
+          />
 
-          {/* Mesh grid overlay */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-[0.15]"></div>
-
-          {/* Floating shapes */}
-          <div className="absolute inset-0">
-            <div className="absolute h-32 w-32 rounded-full border border-theme-gold/30 -top-16 -right-16"></div>
-            <div className="absolute h-24 w-24 rounded-full border border-theme-blue/30 bottom-20 left-10"></div>
-            <div className="absolute h-16 w-16 rounded-full border border-theme-navy/30 top-32 left-20"></div>
-          </div>
+          {/* Decorative circles */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-theme-gold/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-theme-blue/10 rounded-full blur-3xl"></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 40 40\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z\'/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
         </div>
       </div>
 
@@ -90,6 +89,13 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes wave {
+          0% { background-position: 0 0; }
+          100% { background-position: 100px 0; }
+        }
+      `}</style>
     </div>
   );
 };
