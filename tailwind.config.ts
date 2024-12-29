@@ -21,7 +21,7 @@ export default {
       colors: {
         'theme': {
           primary: '#7EC8E3',    // Sky Blue - Primary brand color
-          secondary: '#90AEC5',  // Azure Mist - Secondary color
+          secondary: '#009fe3',  // Required blue - Secondary accent
           navy: '#212E4A',       // Medium Navy - Rich backgrounds
           slate: '#5B6D8C',      // Twilight Blue - Subdued elements
           muted: '#4C5C75',      // Frosted Indigo - Muted text
@@ -41,7 +41,7 @@ export default {
           foreground: "#F7F4EF",
         },
         secondary: {
-          DEFAULT: "#90AEC5",
+          DEFAULT: "#009fe3",
           foreground: "#F7F4EF",
         },
         muted: {
@@ -59,10 +59,14 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle': 'linear-gradient(to right, #F7F4EF, #FDFBF6)',
+        'gradient-primary': 'linear-gradient(135deg, #7EC8E3 0%, #009fe3 100%)',
+        'gradient-warm': 'linear-gradient(135deg, #CDC6BE 0%, #BBAF9F 100%)',
+        'gradient-navy': 'linear-gradient(135deg, #212E4A 0%, #4C5C75 100%)',
       },
       boxShadow: {
         'soft': '0 4px 20px -4px rgba(126,200,227,0.15)',
         'hover': '0 20px 40px -4px rgba(126,200,227,0.25)',
+        'glow': '0 0 40px -10px rgba(0,159,227,0.3)',
       },
     },
   },

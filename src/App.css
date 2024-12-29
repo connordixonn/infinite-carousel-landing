@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,98 +7,64 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.font-cabinet-grotesk {
+  font-family: 'Cabinet Grotesk', sans-serif;
 }
 
-@keyframes logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.animate-marquee {
-  display: flex;
-  width: 200%;
-  animation: marquee 60s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-slow {
-  animation: marquee 72s linear infinite;
-}
-
-.animate-pause {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
+@keyframes float {
   0% {
-    transform: translateX(0%);
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateY(0px);
   }
 }
 
-/* Add this to ensure smooth animation */
-.logo-carousel {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-.logo-carousel:hover .animate-marquee {
-  animation-play-state: paused;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-fadeIn,
+  .animate-float,
+  .animate-pulse {
     animation: none;
-    width: 100%;
   }
-}
-
-/* Add shadow styles */
-.shadow-lg {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08),
-              0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-/* Add this to ensure clean borders */
-.ring-1 {
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700&display=swap');
-
-.font-cabinet-grotesk {
-  font-family: 'Cabinet Grotesk', sans-serif;
 }
