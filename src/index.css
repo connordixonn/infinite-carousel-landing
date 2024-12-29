@@ -56,13 +56,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-theme-primary text-theme-text antialiased;
+    @apply bg-theme-navy text-theme-text antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply text-theme-cream font-semibold tracking-tight;
   }
   p {
-    @apply text-theme-slate leading-relaxed;
+    @apply text-theme-stone leading-relaxed;
   }
 }
 
