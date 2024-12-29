@@ -5,20 +5,27 @@ import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen">
-      {/* Fixed base background */}
-      <div className="fixed inset-0 bg-gradient-to-b from-sky-50 to-white" />
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Main background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-sky-50/10 to-white" />
       
-      {/* Background decorative elements */}
-      <div className="fixed inset-0 bg-grid-slate-100 bg-[size:20px] opacity-30 pointer-events-none" />
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 bg-grid-slate-200/[0.07] bg-[size:20px]" />
       
-      {/* Main content container */}
-      <div className="relative z-10">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl" />
+      
+      {/* Content */}
+      <div className="relative">
         <Hero />
         <LogoCarousel />
-        <Features />
+        <Features 
+          title="How We Help You Scale" 
+          subtitle="Enterprise Growth Solutions"
+          description="Unlock your business potential with our proven strategies"
+          variant="primary"
+        />
         <CaseStudies />
       </div>
     </div>
