@@ -66,31 +66,6 @@ export default {
         'glow': '0 0 40px rgba(126, 200, 227, 0.3)',
         'warm': '0 0 30px rgba(205, 198, 190, 0.2)',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        pulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
-        },
-        wave: {
-          '0%': { transform: 'rotate(0.0deg)' },
-          '10%': { transform: 'rotate(14deg)' },
-          '20%': { transform: 'rotate(-8deg)' },
-          '30%': { transform: 'rotate(14deg)' },
-          '40%': { transform: 'rotate(-4deg)' },
-          '50%': { transform: 'rotate(10.0deg)' },
-          '60%': { transform: 'rotate(0.0deg)' },
-          '100%': { transform: 'rotate(0.0deg)' },
-        },
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse': 'pulse 4s ease-in-out infinite',
-        'wave': 'wave 2.5s ease-in-out infinite',
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
