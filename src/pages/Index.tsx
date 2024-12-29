@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { LogoCarousel } from "@/components/LogoCarousel";
 import { Features } from "@/components/Features";
-import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
@@ -15,7 +14,6 @@ const Index = () => {
           description="Unlock new levels of growth with our enterprise-focused approach"
           variant="primary"
         />
-        <CaseStudies />
       </div>
     </div>
   );
