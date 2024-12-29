@@ -4,10 +4,12 @@ import { ArrowRight, Play } from "lucide-react";
 export const Hero = () => {
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-theme-white via-theme-blue/5 to-theme-white">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#7EC8E320_1px,transparent_1px),linear-gradient(to_bottom,#7EC8E320_1px,transparent_1px)] bg-[size:24px_24px]" />
+      {/* Modern decorative elements */}
       <div className="absolute right-0 top-0 -mt-24 transform translate-x-1/2">
         <div className="w-96 h-96 bg-theme-blue opacity-20 rounded-full blur-3xl" />
+      </div>
+      <div className="absolute left-0 bottom-0 -mb-24 transform -translate-x-1/2">
+        <div className="w-72 h-72 bg-theme-gold opacity-10 rounded-full blur-2xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
