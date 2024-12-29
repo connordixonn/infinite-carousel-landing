@@ -25,36 +25,36 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7EC8E3", // Sky Blue
-          dark: "#2F3E52", // Light Navy
-          foreground: "#FAFAF9", // Off-White
+          DEFAULT: "#0EA5E9", // Vivid Sky Blue
+          dark: "#0369A1", // Deep Ocean Blue
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#505F73", // Slate Blue
-          foreground: "#FAFAF9", // Off-White
+          DEFAULT: "#334155", // Slate Gray
+          foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#E8B860", // Butterscotch
-          foreground: "#3C3C3C", // Charcoal Gray
+          DEFAULT: "#F59E0B", // Warm Amber
+          foreground: "#FFFFFF",
         },
         muted: {
-          DEFAULT: "#EBEBEB", // Soft Gray
-          foreground: "#3C3C3C", // Charcoal Gray
+          DEFAULT: "#F1F5F9", // Light Gray
+          foreground: "#334155",
         },
         neutral: {
-          DEFAULT: "#E5D7C7", // Soft Tan
-          foreground: "#2F3E52", // Light Navy
+          DEFAULT: "#E2E8F0", // Cool Gray
+          foreground: "#334155",
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        cabinet: ['Cabinet Grotesk', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(to right, #7EC8E3, #505F73)',
-        'gradient-secondary': 'linear-gradient(to bottom, #FAFAF9, #EBEBEB)',
-        'gradient-accent': 'linear-gradient(to right, #E8B860, #E5D7C7)',
+        'gradient-primary': 'linear-gradient(to right, #0EA5E9, #334155)',
+        'gradient-secondary': 'linear-gradient(to bottom, #F8FAFC, #E2E8F0)',
+        'gradient-accent': 'linear-gradient(to right, #F59E0B, #FBBF24)',
       },
     },
   },
