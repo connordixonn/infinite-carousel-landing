@@ -5,7 +5,7 @@ import { Menu } from "lucide-react";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 left-0 right-0 bg-theme-pearl/80 backdrop-blur-md z-[1000] border-b border-theme-primary/10">
+    <header className="sticky top-0 left-0 right-0 bg-theme-navy/80 backdrop-blur-md z-[1000] border-b border-theme-warm/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
@@ -19,10 +19,10 @@ export const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            <Button variant="ghost" className="text-theme-slate hover:text-theme-navy hover:bg-theme-primary/5" asChild>
+            <Button variant="ghost" className="text-theme-warm hover:text-theme-white hover:bg-theme-primary/5" asChild>
               <Link to="/features">Features</Link>
             </Button>
-            <Button variant="ghost" className="text-theme-slate hover:text-theme-navy hover:bg-theme-primary/5" asChild>
+            <Button variant="ghost" className="text-theme-warm hover:text-theme-white hover:bg-theme-primary/5" asChild>
               <Link to="/about">About</Link>
             </Button>
             <Button 
@@ -36,7 +36,7 @@ export const Header = () => {
             </Button>
           </div>
 
-          <Button variant="ghost" size="icon" className="md:hidden text-theme-slate hover:text-theme-navy hover:bg-theme-primary/5">
+          <Button variant="ghost" size="icon" className="md:hidden text-theme-warm hover:text-theme-white hover:bg-theme-primary/5">
             <Menu className="h-6 w-6" />
           </Button>
         </div>
