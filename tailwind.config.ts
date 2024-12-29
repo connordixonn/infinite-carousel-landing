@@ -29,6 +29,11 @@ export default {
           charcoal: '#3C3C3C',
           blue: '#7EC8E3',
         },
+        'graph': {
+          bg: '#F8FAFC',
+          grid: '#F1F5F9',
+          hover: '#EFF6FF',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
