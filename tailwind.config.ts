@@ -27,7 +27,7 @@ export default {
           gold: '#E8B860',
           white: '#FAFAF9',
           charcoal: '#3C3C3C',
-          blue: '#7EC8E3', // Updated to a brighter, baby blue shade
+          blue: '#009fe3', // Updated to the requested blue color
         },
         'graph': {
           bg: '#F8FAFC',
@@ -40,7 +40,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7EC8E3", // Updated to match theme.blue
+          DEFAULT: "#009fe3", // Updated to match theme.blue
           foreground: "#FAFAF9",
         },
         secondary: {
