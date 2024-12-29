@@ -15,16 +15,19 @@ export default {
     extend: {
       colors: {
         'theme': {
-          primary: '#212E4A',    // Medium Navy - Primary background
-          secondary: '#009fe3',  // Required blue - Accent color
-          slate: '#5B6D8C',      // Twilight Blue - Secondary text
-          muted: '#4C5C75',      // Frosted Indigo - Muted elements
-          warm: '#CDC6BE',       // Warm Stone - Warm accents
-          sand: '#BBAF9F',       // Soft Taupe - Secondary warm accent
-          cream: '#F7F4EF',      // Eggshell - Light text
-          navy: '#242424',       // Deep Graphite - Dark sections
-          accent: '#7EC8E3',     // Sky Blue - Highlights
-          text: '#FDFBF6',       // Cream White - Primary text
+          navy: '#212E4A',      // Medium Navy - Primary background
+          indigo: '#4C5C75',    // Frosted Indigo - Secondary background
+          blue: '#009fe3',      // Required blue - Accent color
+          sky: '#7EC8E3',       // Sky Blue - Interactive elements
+          denim: '#6F8CA9',     // Faded Denim - Tertiary elements
+          walnut: '#7B5A47',    // Walnut Brown - Rich accents
+          mocha: '#9C8F80',     // Mocha - Subtle accents
+          stone: '#CDC6BE',     // Warm Stone - Muted elements
+          taupe: '#BBAF9F',     // Soft Taupe - Secondary muted
+          cream: '#FDFBF6',     // Cream White - Light text
+          pearl: '#FEFEFD',     // Pearl White - Bright elements
+          graphite: '#242424',  // Deep Graphite - Dark sections
+          text: '#1F1F1F',      // Dark Text - Primary text
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -33,15 +36,15 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#212E4A",
-          foreground: "#F7F4EF",
+          foreground: "#FDFBF6",
         },
         secondary: {
           DEFAULT: "#009fe3",
-          foreground: "#F7F4EF",
+          foreground: "#FDFBF6",
         },
         muted: {
           DEFAULT: "#4C5C75",
-          foreground: "#F7F4EF",
+          foreground: "#FDFBF6",
         },
         accent: {
           DEFAULT: "#7EC8E3",
@@ -56,6 +59,7 @@ export default {
         'gradient-primary': 'linear-gradient(135deg, #212E4A 0%, #4C5C75 100%)',
         'gradient-accent': 'linear-gradient(135deg, #009fe3 0%, #7EC8E3 100%)',
         'gradient-warm': 'linear-gradient(135deg, #CDC6BE 0%, #BBAF9F 100%)',
+        'noise': 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
       },
       boxShadow: {
         'neon': '0 0 20px rgba(0, 159, 227, 0.5)',
