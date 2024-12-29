@@ -71,6 +71,12 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
+      backgroundImage: {
+        'graph-pattern': `radial-gradient(#F1F5F9 1px, transparent 1px)`,
+      },
+      backgroundSize: {
+        'graph-pattern': '24px 24px',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
