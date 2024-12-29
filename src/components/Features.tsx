@@ -28,17 +28,20 @@ interface FeaturesProps {
 export const Features = ({ title, subtitle, description }: FeaturesProps) => {
   return (
     <div className="relative py-32 overflow-hidden bg-theme-navy">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(126,200,227,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(126,200,227,0.1)_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div className="absolute right-0 top-0 -mt-24 transform translate-x-1/2">
-        <div className="w-96 h-96 bg-theme-primary opacity-20 rounded-full blur-3xl" />
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(126,200,227,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(126,200,227,0.05)_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute right-0 top-0 -mt-24 transform translate-x-1/2">
+          <div className="w-96 h-96 bg-theme-secondary opacity-10 rounded-full blur-3xl animate-pulse" />
+        </div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-24">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-theme-primary/10 text-theme-white">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-theme-secondary/10 text-theme-cream">
             {subtitle}
           </span>
-          <h2 className="mt-8 text-5xl font-bold tracking-tight text-theme-white">
+          <h2 className="mt-8 text-5xl font-bold tracking-tight text-theme-cream">
             {title}
           </h2>
           <p className="mt-6 text-xl leading-8 text-theme-warm">
@@ -52,17 +55,17 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
               key={feature.title}
               className="group relative"
             >
-              <div className="relative z-10 p-8 bg-gradient-to-br from-theme-navy/50 to-theme-navy/30 backdrop-blur-sm rounded-3xl transition-all duration-500 
-                transform hover:-translate-y-2 hover:scale-[1.01] border border-theme-warm/10
-                hover:shadow-glow">
-                <div className="inline-flex p-3 rounded-2xl bg-gradient-primary 
-                  shadow-md mb-6 group-hover:shadow-lg transition-all duration-500
-                  group-hover:scale-110 group-hover:rotate-3">
-                  <feature.icon className="w-6 h-6 text-white" />
+              <div className="relative z-10 p-8 bg-gradient-to-br from-theme-navy/50 to-theme-navy/30 backdrop-blur-sm rounded-3xl 
+                transition-all duration-500 transform hover:-translate-y-2 hover:scale-[1.01] border border-theme-warm/10
+                hover:shadow-neon before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-accent 
+                before:opacity-0 before:transition-opacity hover:before:opacity-5">
+                <div className="inline-flex p-3 rounded-2xl bg-gradient-accent shadow-md mb-6 
+                  group-hover:shadow-neon transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  <feature.icon className="w-6 h-6 text-theme-primary" />
                 </div>
 
-                <h3 className="text-xl font-semibold text-theme-white mb-4 
-                  group-hover:text-theme-primary transition-colors duration-500">
+                <h3 className="text-xl font-semibold text-theme-cream mb-4 
+                  group-hover:text-theme-secondary transition-colors duration-500">
                   {feature.title}
                 </h3>
                 <p className="text-theme-warm leading-relaxed">
@@ -71,12 +74,9 @@ export const Features = ({ title, subtitle, description }: FeaturesProps) => {
 
                 <div className="absolute top-8 right-8 transition-all duration-500 
                   opacity-0 transform translate-x-4 group-hover:opacity-100 group-hover:translate-x-0">
-                  <ArrowUpRight className="w-5 h-5 text-theme-primary" />
+                  <ArrowUpRight className="w-5 h-5 text-theme-secondary" />
                 </div>
               </div>
-
-              <div className="absolute inset-0 z-0 bg-gradient-to-r from-theme-primary/5 to-theme-secondary/5 
-                rounded-3xl blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </div>
           ))}
         </div>

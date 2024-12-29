@@ -15,16 +15,16 @@ export default {
     extend: {
       colors: {
         'theme': {
-          primary: '#7EC8E3',    // Sky Blue - Primary brand color
-          secondary: '#009fe3',  // Required blue - Secondary accent
-          navy: '#212E4A',       // Medium Navy - Rich backgrounds
-          slate: '#5B6D8C',      // Twilight Blue - Subdued elements
-          muted: '#4C5C75',      // Frosted Indigo - Muted text
-          warm: '#CDC6BE',       // Warm Stone - Subtle warm accent
+          primary: '#212E4A',    // Medium Navy - Primary background
+          secondary: '#009fe3',  // Required blue - Accent color
+          slate: '#5B6D8C',      // Twilight Blue - Secondary text
+          muted: '#4C5C75',      // Frosted Indigo - Muted elements
+          warm: '#CDC6BE',       // Warm Stone - Warm accents
           sand: '#BBAF9F',       // Soft Taupe - Secondary warm accent
-          white: '#F7F4EF',      // Eggshell White - Primary background
-          pearl: '#FDFBF6',      // Cream White - Secondary background
-          text: '#1F1F1F',       // Dark Text - Primary text
+          cream: '#F7F4EF',      // Eggshell - Light text
+          navy: '#242424',       // Deep Graphite - Dark sections
+          accent: '#7EC8E3',     // Sky Blue - Highlights
+          text: '#FDFBF6',       // Cream White - Primary text
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -32,7 +32,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7EC8E3",
+          DEFAULT: "#212E4A",
           foreground: "#F7F4EF",
         },
         secondary: {
@@ -40,11 +40,11 @@ export default {
           foreground: "#F7F4EF",
         },
         muted: {
-          DEFAULT: "#ECEAF4",
-          foreground: "#4C5C75",
+          DEFAULT: "#4C5C75",
+          foreground: "#F7F4EF",
         },
         accent: {
-          DEFAULT: "#CDC6BE",
+          DEFAULT: "#7EC8E3",
           foreground: "#212E4A",
         },
       },
@@ -53,15 +53,39 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-subtle': 'linear-gradient(to right, #F7F4EF, #FDFBF6)',
-        'gradient-primary': 'linear-gradient(135deg, #7EC8E3 0%, #009fe3 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #212E4A 0%, #4C5C75 100%)',
+        'gradient-accent': 'linear-gradient(135deg, #009fe3 0%, #7EC8E3 100%)',
         'gradient-warm': 'linear-gradient(135deg, #CDC6BE 0%, #BBAF9F 100%)',
-        'gradient-navy': 'linear-gradient(135deg, #212E4A 0%, #4C5C75 100%)',
       },
       boxShadow: {
-        'soft': '0 4px 20px -4px rgba(126,200,227,0.15)',
-        'hover': '0 20px 40px -4px rgba(126,200,227,0.25)',
-        'glow': '0 0 40px -10px rgba(0,159,227,0.3)',
+        'neon': '0 0 20px rgba(0, 159, 227, 0.5)',
+        'glow': '0 0 40px rgba(126, 200, 227, 0.3)',
+        'warm': '0 0 30px rgba(205, 198, 190, 0.2)',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '10%': { transform: 'rotate(14deg)' },
+          '20%': { transform: 'rotate(-8deg)' },
+          '30%': { transform: 'rotate(14deg)' },
+          '40%': { transform: 'rotate(-4deg)' },
+          '50%': { transform: 'rotate(10.0deg)' },
+          '60%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
+        },
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse': 'pulse 4s ease-in-out infinite',
+        'wave': 'wave 2.5s ease-in-out infinite',
       },
     },
   },
